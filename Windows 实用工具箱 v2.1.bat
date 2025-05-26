@@ -907,14 +907,14 @@ echo               系统信息工具
 echo =================================================
 echo.
 echo   [1] 系统信息      
-echo   [2] 系统日志              [0] 返回主菜单
+echo   [2] 系统日志              [3] 返回主菜单
 echo.
 echo =================================================
 echo.
 
-choice /C 120 /N /M "请选择 [1-6]: "
+choice /C 123 /N /M "请选择 [1-3]: "
 
-if errorlevel 0 goto main_menu
+if errorlevel 3 goto main_menu
 if errorlevel 2 goto system_logs
 if errorlevel 1 goto basic_info
 
@@ -1010,14 +1010,14 @@ echo =================================================
 echo.
 echo   [1] 显示设置           [2] 声音设置
 echo   [3] 网络设置           [4] 时间和日期
-echo   [5] 用户账户设置     [0] 返回主菜单
+echo   [5] 用户账户设置     [6] 返回主菜单
 echo.
 echo =================================================
 echo.
 
-choice /C 123450 /N /M "请选择设置类别 [1-5,0]: "
+choice /C 123456 /N /M "请选择设置类别 [1-6]: "
 
-if errorlevel 0 goto main_menu
+if errorlevel 6 goto main_menu
 if errorlevel 5 goto user_accounts
 if errorlevel 4 goto time_date
 if errorlevel 3 goto network_settings
@@ -1104,10 +1104,10 @@ echo.
 echo 如果您支持我们用上千行代码打造的工具箱，并希望我们继续更新升级，请赞助我们
 echo.
 echo.
-echo [1] 打开Github仓库    [0]返回主菜单
-choice /C 10 /N /M "请选择操作 [1,0]: "
+echo [1] 打开Github仓库    [2]返回主菜单
+choice /C 12 /N /M "请选择操作 [1-2]: "
 
-if errorlevel 0 goto main_menu
+if errorlevel 2 goto main_menu
 if errorlevel 1 goto start_github
 
 ::打开仓库
@@ -1125,15 +1125,14 @@ echo               其他实用工具
 echo =================================================
 echo.
 echo   [1] 命令提示符         [2] PowerShell
-echo   [3] 资源管理器         [0] 返回主菜单
+echo   [3] 返回主菜单
 echo.
 echo =================================================
 echo.
 
-choice /C 1230 /N /M "请选择工具 [1-3,0]: "
+choice /C 123 /N /M "请选择工具 [1-3,0]: "
 
-if errorlevel 0 goto main_menu
-if errorlevel 3 goto explorer
+if errorlevel 3 goto main_menu
 if errorlevel 2 goto powershell
 if errorlevel 1 goto cmd_prompt
 
