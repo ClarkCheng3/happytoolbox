@@ -1,14 +1,14 @@
 @echo off
 setlocal enabledelayedexpansion
-title WindowsÊµÓÃ¹¤¾ßÏä v2.1
+title Windowså®žç”¨å·¥å…·ç®± v2.1
 
-:: ÑÕÉ«ÉèÖÃ - ±³¾°À¶É«£¬ÎÄ×Ö°×É«
+:: é¢œè‰²è®¾ç½® - èƒŒæ™¯è“è‰²ï¼Œæ–‡å­—ç™½è‰²
 color 1F
 
-:: ¼ì²é¹ÜÀíÔ±È¨ÏÞ
+:: æ£€æŸ¥ç®¡ç†å‘˜æƒé™
 fltmc >nul 2>&1 || (
-    echo ¾¯¸æ£º´Ë¹¤¾ßÏä²¿·Ö¹¦ÄÜÐèÒª¹ÜÀíÔ±È¨ÏÞ¡£
-    echo ÇëÓÒ¼üÑ¡Ôñ"ÒÔ¹ÜÀíÔ±Éí·ÝÔËÐÐ"ÒÔ»ñµÃÍêÕû¹¦ÄÜ¡£
+    echo è­¦å‘Šï¼šæ­¤å·¥å…·ç®±éƒ¨åˆ†åŠŸèƒ½éœ€è¦ç®¡ç†å‘˜æƒé™ã€‚
+    echo è¯·å³é”®é€‰æ‹©"ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œ"ä»¥èŽ·å¾—å®Œæ•´åŠŸèƒ½ã€‚
     echo.
     pause
 )
@@ -16,22 +16,22 @@ fltmc >nul 2>&1 || (
 :main_menu
 cls
 echo =================================================
-echo           Windows ÊµÓÃ¹¤¾ßÏä v2.1
+echo           Windows å®žç”¨å·¥å…·ç®± v2.1
 echo =================================================
 echo.
-echo   [1] ÏµÍ³ÓÅ»¯¹¤¾ß       [2] ÍøÂçÕï¶Ï¹¤¾ß
-echo   [3] ÎÄ¼þ¹ÜÀí¹¤¾ß       [4] °²È«Î¬»¤¹¤¾ß
-echo   [5] ´ÅÅÌ¹ÜÀí¹¤¾ß       [6] ÏµÍ³ÐÅÏ¢¹¤¾ß
-echo   [7] ¿ì½ÝÉèÖÃ¹¤¾ß       [8] ¹ØÓÚ¹¤¾ßÏä
-echo   [9] ÆäËûÊµÓÃ¹¤¾ß       [0] ÍË³ö¹¤¾ßÏä
+echo   [1] ç³»ç»Ÿä¼˜åŒ–å·¥å…·       [2] ç½‘ç»œè¯Šæ–­å·¥å…·
+echo   [3] æ–‡ä»¶ç®¡ç†å·¥å…·       [4] å®‰å…¨ç»´æŠ¤å·¥å…·
+echo   [5] ç£ç›˜ç®¡ç†å·¥å…·       [6] ç³»ç»Ÿä¿¡æ¯å·¥å…·
+echo   [7] å¿«æ·è®¾ç½®å·¥å…·       [8] å…³äºŽå·¥å…·ç®±
+echo   [9] å…¶ä»–å®žç”¨å·¥å…·       [0] é€€å‡ºå·¥å…·ç®±
 echo.
-echo GitHub²Ö¿â£ºhttps://github.com/ClarkCheng3/happytoolbox
+echo GitHubä»“åº“ï¼šhttps://github.com/ClarkCheng3/happytoolbox
 echo =================================================
-echo  ÌáÊ¾£º²¿·Ö¹¦ÄÜÐèÒª¹ÜÀíÔ±È¨ÏÞ²ÅÄÜÕý³£ÔËÐÐ¡£
+echo  æç¤ºï¼šéƒ¨åˆ†åŠŸèƒ½éœ€è¦ç®¡ç†å‘˜æƒé™æ‰èƒ½æ­£å¸¸è¿è¡Œã€‚
 echo =================================================
 echo.
 
-choice /C 1234567890 /N /M "ÇëÑ¡Ôñ¹¦ÄÜ [1-9,0]: "
+choice /C 1234567890 /N /M "è¯·é€‰æ‹©åŠŸèƒ½ [1-9,0]: "
 
 if errorlevel 10 goto exit
 if errorlevel 9 goto other_tools
@@ -44,22 +44,22 @@ if errorlevel 3 goto file_tools
 if errorlevel 2 goto network_tools
 if errorlevel 1 goto system_optimize
 
-:: ÏµÍ³ÓÅ»¯¹¤¾ß
+:: ç³»ç»Ÿä¼˜åŒ–å·¥å…·
 :system_optimize
 cls
 echo =================================================
-echo               ÏµÍ³ÓÅ»¯¹¤¾ß
+echo               ç³»ç»Ÿä¼˜åŒ–å·¥å…·
 echo =================================================
 echo.
-echo   [1] ÇåÀíÁÙÊ±ÎÄ¼þ       [2] ´ÅÅÌËéÆ¬ÕûÀí
-echo   [3] ½ûÓÃÏµÍ³ÐÝÃß       [4] ÏµÍ³ÐÔÄÜÓÅ»¯
-echo   [5] ÏµÍ³·þÎñÓÅ»¯       [6] »Ö¸´Ä¬ÈÏÉèÖÃ
-echo   [7] ·µ»ØÖ÷²Ëµ¥
+echo   [1] æ¸…ç†ä¸´æ—¶æ–‡ä»¶       [2] ç£ç›˜ç¢Žç‰‡æ•´ç†
+echo   [3] ç¦ç”¨ç³»ç»Ÿä¼‘çœ        [4] ç³»ç»Ÿæ€§èƒ½ä¼˜åŒ–
+echo   [5] ç³»ç»ŸæœåŠ¡ä¼˜åŒ–       [6] æ¢å¤é»˜è®¤è®¾ç½®
+echo   [7] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 1234567 /N /M "ÇëÑ¡ÔñÓÅ»¯¹¦ÄÜ [1-7]: "
+choice /C 1234567 /N /M "è¯·é€‰æ‹©ä¼˜åŒ–åŠŸèƒ½ [1-7]: "
 
 if errorlevel 7 goto main_menu
 if errorlevel 6 goto restore_defaults
@@ -71,13 +71,13 @@ if errorlevel 1 goto clean_temp_files
 
 :clean_temp_files
 cls
-echo ÕýÔÚÇåÀíÏµÍ³ÁÙÊ±ÎÄ¼þ...
+echo æ­£åœ¨æ¸…ç†ç³»ç»Ÿä¸´æ—¶æ–‡ä»¶...
 echo.
 rd /S /Q "%temp%" 2>nul
 del /F /S /Q "%windir%\temp\*.*" 2>nul
 del /F /S /Q "%windir%\prefetch\*.*" 2>nul
 echo.
-echo ÏµÍ³ÁÙÊ±ÎÄ¼þÇåÀíÍê³É£¡
+echo ç³»ç»Ÿä¸´æ—¶æ–‡ä»¶æ¸…ç†å®Œæˆï¼
 echo.
 pause
 goto system_optimize
@@ -85,34 +85,34 @@ goto system_optimize
 :defrag_disk
 cls
 echo =================================================
-echo             ´ÅÅÌËéÆ¬ÕûÀí¹¤¾ß
+echo             ç£ç›˜ç¢Žç‰‡æ•´ç†å·¥å…·
 echo =================================================
 echo.
-echo µ±Ç°ÏµÍ³´ÅÅÌÐÅÏ¢£º
+echo å½“å‰ç³»ç»Ÿç£ç›˜ä¿¡æ¯ï¼š
 wmic logicaldisk where drivetype=3 get deviceid, volumename, freespace, size
 echo.
-set /p drive="ÇëÊäÈëÒªÕûÀíµÄÇý¶¯Æ÷ºÅ (ÀýÈç C): "
+set /p drive="è¯·è¾“å…¥è¦æ•´ç†çš„é©±åŠ¨å™¨å· (ä¾‹å¦‚ C): "
 echo.
-echo ÕýÔÚ¶Ô %drive%: ½øÐÐËéÆ¬ÕûÀí... Õâ¿ÉÄÜÐèÒªÒ»¶ÎÊ±¼ä¡£
+echo æ­£åœ¨å¯¹ %drive%: è¿›è¡Œç¢Žç‰‡æ•´ç†... è¿™å¯èƒ½éœ€è¦ä¸€æ®µæ—¶é—´ã€‚
 echo.
 defrag %drive%: /U /V
 echo.
-echo ´ÅÅÌËéÆ¬ÕûÀíÍê³É£¡
+echo ç£ç›˜ç¢Žç‰‡æ•´ç†å®Œæˆï¼
 echo.
 pause
 goto system_optimize
 
 :disable_hibernation
 cls
-echo ÕýÔÚ¼ì²éÏµÍ³ÐÝÃß×´Ì¬...
-powercfg /a | find "ÐÝÃß" >nul
+echo æ­£åœ¨æ£€æŸ¥ç³»ç»Ÿä¼‘çœ çŠ¶æ€...
+powercfg /a | find "ä¼‘çœ " >nul
 if %errorlevel%==0 (
-    echo ÏµÍ³ÐÝÃßÒÑÆôÓÃ£¬ÕýÔÚ½ûÓÃ...
+    echo ç³»ç»Ÿä¼‘çœ å·²å¯ç”¨ï¼Œæ­£åœ¨ç¦ç”¨...
     powercfg /h off
     echo.
-    echo ÏµÍ³ÐÝÃßÒÑ½ûÓÃ£¡
+    echo ç³»ç»Ÿä¼‘çœ å·²ç¦ç”¨ï¼
 ) else (
-    echo ÏµÍ³ÐÝÃßÒÑ½ûÓÃ£¡
+    echo ç³»ç»Ÿä¼‘çœ å·²ç¦ç”¨ï¼
 )
 echo.
 pause
@@ -121,15 +121,15 @@ goto system_optimize
 :performance_optimize
 cls
 echo =================================================
-echo             ÏµÍ³ÐÔÄÜÓÅ»¯
+echo             ç³»ç»Ÿæ€§èƒ½ä¼˜åŒ–
 echo =================================================
 echo.
-echo ÕýÔÚµ÷ÕûÏµÍ³ÐÔÄÜÉèÖÃÒÔÌá¸ßËÙ¶È...
+echo æ­£åœ¨è°ƒæ•´ç³»ç»Ÿæ€§èƒ½è®¾ç½®ä»¥æé«˜é€Ÿåº¦...
 echo.
-:: ÉèÖÃÐÔÄÜÑ¡ÏîÎª"µ÷ÕûÎª×î¼ÑÐÔÄÜ"
+:: è®¾ç½®æ€§èƒ½é€‰é¡¹ä¸º"è°ƒæ•´ä¸ºæœ€ä½³æ€§èƒ½"
 systempropertiesperformance.exe /p /d
 echo.
-echo ÏµÍ³ÐÔÄÜÉèÖÃÒÑÓÅ»¯£¡
+echo ç³»ç»Ÿæ€§èƒ½è®¾ç½®å·²ä¼˜åŒ–ï¼
 echo.
 pause
 goto system_optimize
@@ -137,27 +137,27 @@ goto system_optimize
 :service_optimize
 cls
 echo =================================================
-echo             ÏµÍ³·þÎñÓÅ»¯
+echo             ç³»ç»ŸæœåŠ¡ä¼˜åŒ–
 echo =================================================
 echo.
-echo ×¢Òâ£º½ûÓÃ²»±ØÒªµÄ·þÎñ¿ÉÄÜ»áÓ°ÏìÄ³Ð©¹¦ÄÜ¡£
-echo ½¨ÒéÏÈ±¸·ÝÏµÍ³»ò´´½¨»¹Ô­µã¡£
+echo æ³¨æ„ï¼šç¦ç”¨ä¸å¿…è¦çš„æœåŠ¡å¯èƒ½ä¼šå½±å“æŸäº›åŠŸèƒ½ã€‚
+echo å»ºè®®å…ˆå¤‡ä»½ç³»ç»Ÿæˆ–åˆ›å»ºè¿˜åŽŸç‚¹ã€‚
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto system_optimize
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚÓÅ»¯ÏµÍ³·þÎñ...
+    echo æ­£åœ¨ä¼˜åŒ–ç³»ç»ŸæœåŠ¡...
     echo.
-    :: ½ûÓÃÒ»Ð©³£¼ûµÄ·Ç¹Ø¼ü·þÎñ
+    :: ç¦ç”¨ä¸€äº›å¸¸è§çš„éžå…³é”®æœåŠ¡
     sc config wuauserv start= disabled >nul 2>&1  :: Windows Update
-    sc config Superfetch start= disabled >nul 2>&1  :: Ô¤È¡
-    sc config HomeGroupListener start= disabled >nul 2>&1  :: ¼ÒÍ¥×é
-    sc config HomeGroupProvider start= disabled >nul 2>&1  :: ¼ÒÍ¥×é
-    sc config XboxLiveAuthManager start= disabled >nul 2>&1  :: Xbox·þÎñ
-    sc config XboxNetApiSvc start= disabled >nul 2>&1  :: XboxÍøÂç·þÎñ
+    sc config Superfetch start= disabled >nul 2>&1  :: é¢„å–
+    sc config HomeGroupListener start= disabled >nul 2>&1  :: å®¶åº­ç»„
+    sc config HomeGroupProvider start= disabled >nul 2>&1  :: å®¶åº­ç»„
+    sc config XboxLiveAuthManager start= disabled >nul 2>&1  :: XboxæœåŠ¡
+    sc config XboxNetApiSvc start= disabled >nul 2>&1  :: Xboxç½‘ç»œæœåŠ¡
     echo.
-    echo ÏµÍ³·þÎñÓÅ»¯Íê³É£¡
+    echo ç³»ç»ŸæœåŠ¡ä¼˜åŒ–å®Œæˆï¼
 )
 echo.
 pause
@@ -166,44 +166,44 @@ goto system_optimize
 :restore_defaults
 cls
 echo =================================================
-echo           »Ö¸´ÏµÍ³Ä¬ÈÏÉèÖÃ
+echo           æ¢å¤ç³»ç»Ÿé»˜è®¤è®¾ç½®
 echo =================================================
 echo.
-echo ¾¯¸æ£º´Ë²Ù×÷½«»Ö¸´ËùÓÐÓÅ»¯ÉèÖÃÎªÄ¬ÈÏÖµ£¡
+echo è­¦å‘Šï¼šæ­¤æ“ä½œå°†æ¢å¤æ‰€æœ‰ä¼˜åŒ–è®¾ç½®ä¸ºé»˜è®¤å€¼ï¼
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto system_optimize
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚ»Ö¸´ÏµÍ³Ä¬ÈÏÉèÖÃ...
+    echo æ­£åœ¨æ¢å¤ç³»ç»Ÿé»˜è®¤è®¾ç½®...
     echo.
-    :: »Ö¸´Ò»Ð©ÓÅ»¯ÉèÖÃÎªÄ¬ÈÏÖµ
+    :: æ¢å¤ä¸€äº›ä¼˜åŒ–è®¾ç½®ä¸ºé»˜è®¤å€¼
     sc config wuauserv start= auto >nul 2>&1  :: Windows Update
-    sc config Superfetch start= auto >nul 2>&1  :: Ô¤È¡
-    powercfg /h on >nul 2>&1  :: ÆôÓÃÐÝÃß
+    sc config Superfetch start= auto >nul 2>&1  :: é¢„å–
+    powercfg /h on >nul 2>&1  :: å¯ç”¨ä¼‘çœ 
     echo.
-    echo ÏµÍ³ÉèÖÃÒÑ»Ö¸´ÎªÄ¬ÈÏÖµ£¡
+    echo ç³»ç»Ÿè®¾ç½®å·²æ¢å¤ä¸ºé»˜è®¤å€¼ï¼
 )
 echo.
 pause
 goto system_optimize
 
-:: ÍøÂçÕï¶Ï¹¤¾ß
+:: ç½‘ç»œè¯Šæ–­å·¥å…·
 :network_tools
 cls
 echo =================================================
-echo               ÍøÂçÕï¶Ï¹¤¾ß
+echo               ç½‘ç»œè¯Šæ–­å·¥å…·
 echo =================================================
 echo.
-echo   [1] ÍøÂçÁ¬½Ó²âÊÔ       [2] IPÅäÖÃÐÅÏ¢
-echo   [3] DNSË¢ÐÂ¹¤¾ß       [4] ¶Ë¿ÚÉ¨Ãè¹¤¾ß
-echo   [5] Â·ÓÉ×·×Ù¹¤¾ß       [6] WiFiÃÜÂë²é¿´
-echo   [7] ·µ»ØÖ÷²Ëµ¥
+echo   [1] ç½‘ç»œè¿žæŽ¥æµ‹è¯•       [2] IPé…ç½®ä¿¡æ¯
+echo   [3] DNSåˆ·æ–°å·¥å…·       [4] ç«¯å£æ‰«æå·¥å…·
+echo   [5] è·¯ç”±è¿½è¸ªå·¥å…·       [6] WiFiå¯†ç æŸ¥çœ‹
+echo   [7] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 1234567 /N /M "ÇëÑ¡ÔñÍøÂç¹¤¾ß [1-7]: "
+choice /C 1234567 /N /M "è¯·é€‰æ‹©ç½‘ç»œå·¥å…· [1-7]: "
 
 if errorlevel 7 goto main_menu
 if errorlevel 6 goto wifi_passwords
@@ -216,24 +216,24 @@ if errorlevel 1 goto network_test
 :network_test
 cls
 echo =================================================
-echo              ÍøÂçÁ¬½Ó²âÊÔ
+echo              ç½‘ç»œè¿žæŽ¥æµ‹è¯•
 echo =================================================
 echo.
-echo ÕýÔÚ²âÊÔÍøÂçÁ¬½Ó£¬ÇëÉÔºò...
+echo æ­£åœ¨æµ‹è¯•ç½‘ç»œè¿žæŽ¥ï¼Œè¯·ç¨å€™...
 echo.
 ping www.baidu.com -n 4 >nul
 if %errorlevel%==0 (
-    echo ¹§Ï²£¡ÄúµÄÍøÂçÁ¬½ÓÕý³£¡£
+    echo æ­å–œï¼æ‚¨çš„ç½‘ç»œè¿žæŽ¥æ­£å¸¸ã€‚
 ) else (
-    echo ÍøÂçÁ¬½Ó²âÊÔÊ§°Ü£¡Çë¼ì²éÄúµÄÍøÂçÉèÖÃ¡£
+    echo ç½‘ç»œè¿žæŽ¥æµ‹è¯•å¤±è´¥ï¼è¯·æ£€æŸ¥æ‚¨çš„ç½‘ç»œè®¾ç½®ã€‚
 )
 echo.
-echo ÕýÔÚ²âÊÔ±¾µØÁ¬½Ó...
+echo æ­£åœ¨æµ‹è¯•æœ¬åœ°è¿žæŽ¥...
 ping 127.0.0.1 -n 4 >nul
 if %errorlevel%==0 (
-    echo ±¾µØ»Ø»·²âÊÔÕý³£¡£
+    echo æœ¬åœ°å›žçŽ¯æµ‹è¯•æ­£å¸¸ã€‚
 ) else (
-    echo ±¾µØ»Ø»·²âÊÔÊ§°Ü£¡ÍøÂçÊÊÅäÆ÷¿ÉÄÜÓÐÎÊÌâ¡£
+    echo æœ¬åœ°å›žçŽ¯æµ‹è¯•å¤±è´¥ï¼ç½‘ç»œé€‚é…å™¨å¯èƒ½æœ‰é—®é¢˜ã€‚
 )
 echo.
 pause
@@ -242,7 +242,7 @@ goto network_tools
 :ip_config
 cls
 echo =================================================
-echo              IPÅäÖÃÐÅÏ¢
+echo              IPé…ç½®ä¿¡æ¯
 echo =================================================
 echo.
 ipconfig /all
@@ -253,13 +253,13 @@ goto network_tools
 :flush_dns
 cls
 echo =================================================
-echo               DNSË¢ÐÂ¹¤¾ß
+echo               DNSåˆ·æ–°å·¥å…·
 echo =================================================
 echo.
-echo ÕýÔÚË¢ÐÂDNS»º´æ...
+echo æ­£åœ¨åˆ·æ–°DNSç¼“å­˜...
 ipconfig /flushdns
 echo.
-echo DNS»º´æÒÑË¢ÐÂ£¡
+echo DNSç¼“å­˜å·²åˆ·æ–°ï¼
 echo.
 pause
 goto network_tools
@@ -267,21 +267,21 @@ goto network_tools
 :port_scan
 cls
 echo =================================================
-echo               ¶Ë¿ÚÉ¨Ãè¹¤¾ß
+echo               ç«¯å£æ‰«æå·¥å…·
 echo =================================================
 echo.
-set /p target="ÇëÊäÈëÒªÉ¨ÃèµÄÄ¿±êIPµØÖ· (ÀýÈç 192.168.1.1): "
+set /p target="è¯·è¾“å…¥è¦æ‰«æçš„ç›®æ ‡IPåœ°å€ (ä¾‹å¦‚ 192.168.1.1): "
 echo.
-echo ÕýÔÚÉ¨Ãè %target% µÄ³£ÓÃ¶Ë¿Ú...
+echo æ­£åœ¨æ‰«æ %target% çš„å¸¸ç”¨ç«¯å£...
 echo.
-echo ¶Ë¿ÚÉ¨Ãè½á¹û:
+echo ç«¯å£æ‰«æç»“æžœ:
 echo ------------------------
 for /L %%p in (20,1,1024) do (
-    start /b /wait cmd /c "(echo open %target% %%p) | (telnet.exe) >nul 2>&1 && echo ¶Ë¿Ú %%p ÊÇ¿ª·ÅµÄ"
+    start /b /wait cmd /c "(echo open %target% %%p) | (telnet.exe) >nul 2>&1 && echo ç«¯å£ %%p æ˜¯å¼€æ”¾çš„"
 )
 echo ------------------------
 echo.
-echo ¶Ë¿ÚÉ¨ÃèÍê³É£¡
+echo ç«¯å£æ‰«æå®Œæˆï¼
 echo.
 pause
 goto network_tools
@@ -289,12 +289,12 @@ goto network_tools
 :trace_route
 cls
 echo =================================================
-echo               Â·ÓÉ×·×Ù¹¤¾ß
+echo               è·¯ç”±è¿½è¸ªå·¥å…·
 echo =================================================
 echo.
-set /p target="ÇëÊäÈëÄ¿±êÍøÕ¾»òIPµØÖ·: "
+set /p target="è¯·è¾“å…¥ç›®æ ‡ç½‘ç«™æˆ–IPåœ°å€: "
 echo.
-echo ÕýÔÚ×·×Ùµ½ %target% µÄÂ·ÓÉ£¬ÇëÉÔºò...
+echo æ­£åœ¨è¿½è¸ªåˆ° %target% çš„è·¯ç”±ï¼Œè¯·ç¨å€™...
 echo.
 tracert %target%
 echo.
@@ -304,38 +304,39 @@ goto network_tools
 :wifi_passwords
 cls
 echo =================================================
-echo             WiFiÃÜÂë²é¿´¹¤¾ß
+echo             WiFiå¯†ç æŸ¥çœ‹å·¥å…·
 echo =================================================
 echo.
-echo ÕýÔÚ»ñÈ¡ÒÑ±£´æµÄWiFiÍøÂçÐÅÏ¢...
+echo æ­£åœ¨èŽ·å–å·²ä¿å­˜çš„WiFiç½‘ç»œä¿¡æ¯...
 echo.
 netsh wlan show profiles
 echo.
-set /p wifi_name="ÇëÊäÈëÒª²é¿´ÃÜÂëµÄWiFiÃû³Æ: "
+set /p wifi_name="è¯·è¾“å…¥è¦æŸ¥çœ‹å¯†ç çš„WiFiåç§°: "
 echo.
-netsh wlan show profile name="%wifi_name%" key=clear | findstr "¹Ø¼üÄÚÈÝ"
+netsh wlan show profile name="%wifi_name%" key=clear | findstr "å…³é”®å†…å®¹"
 echo.
 pause
 goto network_tools
 
-:: ÎÄ¼þ¹ÜÀí¹¤¾ß
+:: æ–‡ä»¶ç®¡ç†å·¥å…·
 :file_tools
 cls
 echo =================================================
-echo               ÎÄ¼þ¹ÜÀí¹¤¾ß
+echo               æ–‡ä»¶ç®¡ç†å·¥å…·
 echo =================================================
 echo.
-echo   [1] ÎÄ¼þËÑË÷¹¤¾ß       [2] ÎÄ¼þÅúÁ¿ÖØÃüÃû
-echo   [3] ÎÄ¼þ¼ÓÃÜ¹¤¾ß       [4] ÎÄ¼þ¹þÏ£Ð£Ñé
-echo   [5] ´óÎÄ¼þ²éÕÒ¹¤¾ß     [6] ÎÄ¼þÑ¹Ëõ¹¤¾ß
-echo   [7] ·µ»ØÖ÷²Ëµ¥
+echo   [1] æ–‡ä»¶æœç´¢å·¥å…·       [2] æ–‡ä»¶æ‰¹é‡é‡å‘½å
+echo   [3] æ–‡ä»¶åŠ å¯†å·¥å…·       [4] æ–‡ä»¶å“ˆå¸Œæ ¡éªŒ
+echo   [5] å¤§æ–‡ä»¶æŸ¥æ‰¾å·¥å…·     [6] æ–‡ä»¶åŽ‹ç¼©å·¥å…·
+echo   [7] æ–‡ä»¶è§£å¯†å·¥å…·       [8] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 1234567 /N /M "ÇëÑ¡ÔñÎÄ¼þ¹¤¾ß [1-7]: "
+choice /C 12345678 /N /M "è¯·é€‰æ‹©æ–‡ä»¶å·¥å…· [1-8]: "
 
-if errorlevel 7 goto main_menu
+if errorlevel 8 goto main_menu
+if errorlevel 7 goto file_decrypt
 if errorlevel 6 goto file_zip
 if errorlevel 5 goto find_large_files
 if errorlevel 4 goto file_hash
@@ -346,17 +347,17 @@ if errorlevel 1 goto file_search
 :file_search
 cls
 echo =================================================
-echo               ÎÄ¼þËÑË÷¹¤¾ß
+echo               æ–‡ä»¶æœç´¢å·¥å…·
 echo =================================================
 echo.
-set /p search_dir="ÇëÊäÈëËÑË÷Ä¿Â¼ (ÀýÈç C:\Users): "
-set /p search_text="ÇëÊäÈëÒªËÑË÷µÄÎÄ¼þÃû»òÄÚÈÝ: "
+set /p search_dir="è¯·è¾“å…¥æœç´¢ç›®å½• (ä¾‹å¦‚ C:\Users): "
+set /p search_text="è¯·è¾“å…¥è¦æœç´¢çš„æ–‡ä»¶åæˆ–å†…å®¹: "
 echo.
-echo ÕýÔÚËÑË÷ÎÄ¼þ£¬ÇëÉÔºò...
+echo æ­£åœ¨æœç´¢æ–‡ä»¶ï¼Œè¯·ç¨å€™...
 echo.
 dir /s /b "%search_dir%\*%search_text%*"
 echo.
-echo ÎÄ¼þËÑË÷Íê³É£¡
+echo æ–‡ä»¶æœç´¢å®Œæˆï¼
 echo.
 pause
 goto file_tools
@@ -364,14 +365,14 @@ goto file_tools
 :batch_rename
 cls
 echo =================================================
-echo             ÎÄ¼þÅúÁ¿ÖØÃüÃû¹¤¾ß
+echo             æ–‡ä»¶æ‰¹é‡é‡å‘½åå·¥å…·
 echo =================================================
 echo.
-set /p rename_dir="ÇëÊäÈëÒªÖØÃüÃûÎÄ¼þµÄÄ¿Â¼: "
-set /p old_text="ÇëÊäÈëÒªÌæ»»µÄÎÄ±¾: "
-set /p new_text="ÇëÊäÈëÌæ»»ºóµÄÎÄ±¾: "
+set /p rename_dir="è¯·è¾“å…¥è¦é‡å‘½åæ–‡ä»¶çš„ç›®å½•: "
+set /p old_text="è¯·è¾“å…¥è¦æ›¿æ¢çš„æ–‡æœ¬: "
+set /p new_text="è¯·è¾“å…¥æ›¿æ¢åŽçš„æ–‡æœ¬: "
 echo.
-echo ÕýÔÚÅúÁ¿ÖØÃüÃûÎÄ¼þ...
+echo æ­£åœ¨æ‰¹é‡é‡å‘½åæ–‡ä»¶...
 echo.
 cd /d "%rename_dir%"
 for %%f in (*%old_text%*) do (
@@ -382,7 +383,7 @@ for %%f in (*%old_text%*) do (
     endlocal
 )
 echo.
-echo ÎÄ¼þÅúÁ¿ÖØÃüÃûÍê³É£¡
+echo æ–‡ä»¶æ‰¹é‡é‡å‘½åå®Œæˆï¼
 echo.
 pause
 goto file_tools
@@ -390,19 +391,18 @@ goto file_tools
 :file_encrypt
 cls
 echo =================================================
-echo               ÎÄ¼þ¼ÓÃÜ¹¤¾ß
+echo               æ–‡ä»¶åŠ å¯†å·¥å…·
 echo =================================================
 echo.
-echo ¾¯¸æ£º´Ë¹¤¾ßÊ¹ÓÃ¼òµ¥µÄ¼ÓÃÜ·½·¨£¬²»ÊÊºÏ¸ß¶ÈÃô¸ÐÊý¾Ý£¡
+echo è­¦å‘Šï¼šæ­¤å·¥å…·ä½¿ç”¨ç®€å•çš„åŠ å¯†æ–¹æ³•ï¼Œä¸é€‚åˆé«˜åº¦æ•æ„Ÿæ•°æ®ï¼
 echo.
-set /p encrypt_file="ÇëÊäÈëÒª¼ÓÃÜµÄÎÄ¼þÂ·¾¶: "
-set /p password="ÇëÊäÈë¼ÓÃÜÃÜÂë: "
+set /p encrypt_file="è¯·è¾“å…¥è¦åŠ å¯†çš„æ–‡ä»¶è·¯å¾„: "
 echo.
-echo ÕýÔÚ¼ÓÃÜÎÄ¼þ...
+echo æ­£åœ¨åŠ å¯†æ–‡ä»¶...
 certutil -encode "%encrypt_file%" "%encrypt_file%.enc" >nul
 del /F "%encrypt_file%"
 echo.
-echo ÎÄ¼þÒÑ¼ÓÃÜÎª: %encrypt_file%.enc
+echo æ–‡ä»¶å·²åŠ å¯†ä¸º: %encrypt_file%.enc
 echo.
 pause
 goto file_tools
@@ -410,20 +410,20 @@ goto file_tools
 :file_hash
 cls
 echo =================================================
-echo               ÎÄ¼þ¹þÏ£Ð£Ñé
+echo               æ–‡ä»¶å“ˆå¸Œæ ¡éªŒ
 echo =================================================
 echo.
-set /p hash_file="ÇëÊäÈëÒªÐ£ÑéµÄÎÄ¼þÂ·¾¶: "
+set /p hash_file="è¯·è¾“å…¥è¦æ ¡éªŒçš„æ–‡ä»¶è·¯å¾„: "
 echo.
-echo ÕýÔÚ¼ÆËãÎÄ¼þ¹þÏ£Öµ£¬ÇëÉÔºò...
+echo æ­£åœ¨è®¡ç®—æ–‡ä»¶å“ˆå¸Œå€¼ï¼Œè¯·ç¨å€™...
 echo.
-echo ÎÄ¼þ MD5 ¹þÏ£:
+echo æ–‡ä»¶ MD5 å“ˆå¸Œ:
 certutil -hashfile "%hash_file%" MD5
 echo.
-echo ÎÄ¼þ SHA1 ¹þÏ£:
+echo æ–‡ä»¶ SHA1 å“ˆå¸Œ:
 certutil -hashfile "%hash_file%" SHA1
 echo.
-echo ÎÄ¼þ SHA256 ¹þÏ£:
+echo æ–‡ä»¶ SHA256 å“ˆå¸Œ:
 certutil -hashfile "%hash_file%" SHA256
 echo.
 pause
@@ -432,17 +432,17 @@ goto file_tools
 :find_large_files
 cls
 echo =================================================
-echo             ´óÎÄ¼þ²éÕÒ¹¤¾ß
+echo             å¤§æ–‡ä»¶æŸ¥æ‰¾å·¥å…·
 echo =================================================
 echo.
-set /p large_dir="ÇëÊäÈëÒªËÑË÷µÄÄ¿Â¼ (ÀýÈç C:\): "
-set /p size_limit="ÇëÊäÈëÎÄ¼þ´óÐ¡ÏÞÖÆ (MB): "
+set /p large_dir="è¯·è¾“å…¥è¦æœç´¢çš„ç›®å½• (ä¾‹å¦‚ C:\): "
+set /p size_limit="è¯·è¾“å…¥æ–‡ä»¶å¤§å°é™åˆ¶ (MB): "
 echo.
-echo ÕýÔÚ²éÕÒ´óÓÚ %size_limit%MB µÄÎÄ¼þ£¬ÇëÉÔºò...
+echo æ­£åœ¨æŸ¥æ‰¾å¤§äºŽ %size_limit%MB çš„æ–‡ä»¶ï¼Œè¯·ç¨å€™...
 echo.
 forfiles /p "%large_dir%" /s /m * /c "cmd /c if @fsize GTR %size_limit%000000 echo @path - @fsize bytes"
 echo.
-echo ´óÎÄ¼þ²éÕÒÍê³É£¡
+echo å¤§æ–‡ä»¶æŸ¥æ‰¾å®Œæˆï¼
 echo.
 pause
 goto file_tools
@@ -450,37 +450,51 @@ goto file_tools
 :file_zip
 cls
 echo =================================================
-echo               ÎÄ¼þÑ¹Ëõ¹¤¾ß
+echo               æ–‡ä»¶åŽ‹ç¼©å·¥å…·
 echo =================================================
 echo.
-set /p zip_dir="ÇëÊäÈëÒªÑ¹ËõµÄÎÄ¼þ»òÄ¿Â¼: "
-set /p zip_file="ÇëÊäÈëÑ¹ËõÎÄ¼þÃû (ÀýÈç archive.zip): "
+set /p zip_dir="è¯·è¾“å…¥è¦åŽ‹ç¼©çš„æ–‡ä»¶æˆ–ç›®å½•: "
+set /p zip_file="è¯·è¾“å…¥åŽ‹ç¼©æ–‡ä»¶å (ä¾‹å¦‚ archive.zip): "
 echo.
-echo ÕýÔÚÑ¹ËõÎÄ¼þ£¬ÇëÉÔºò...
+echo æ­£åœ¨åŽ‹ç¼©æ–‡ä»¶ï¼Œè¯·ç¨å€™...
 echo.
 powershell -command "Compress-Archive -Path '%zip_dir%' -DestinationPath '%zip_file%' -Force"
 echo.
-echo ÎÄ¼þÑ¹ËõÍê³É£¡
+echo æ–‡ä»¶åŽ‹ç¼©å®Œæˆï¼
 echo.
 pause
 goto file_tools
 
-:: °²È«Î¬»¤¹¤¾ß
+:file_decrypt
+cls
+echo =================================================
+echo               æ–‡ä»¶è§£å¯†å·¥å…·
+echo =================================================
+set /p decrypt_file="è¯·è¾“å…¥è§£å¯†æ–‡ä»¶è·¯å¾„: "
+certutil -decode "%decrypt_file%" "%decrypt_file:.enc=%"
+del /F "%decrypt_file%"
+echo.
+echo æ–‡ä»¶å·²æˆåŠŸè§£å¯†å¹¶æ¸…ç†æºæ–‡ä»¶ï¼
+echo.
+pause
+goto file_tools
+
+:: å®‰å…¨ç»´æŠ¤å·¥å…·
 :security_tools
 cls
 echo =================================================
-echo               °²È«Î¬»¤¹¤¾ß
+echo               å®‰å…¨ç»´æŠ¤å·¥å…·
 echo =================================================
 echo.
-echo   [1] ÏµÍ³²¡¶¾É¨Ãè       [2] ¶ñÒâÈí¼þÇå³ý
-echo   [3] ·À»ðÇ½ÉèÖÃ         [4] ÕË»§ÃÜÂëÐÞ¸Ä
-echo   [5] ÏµÍ³»¹Ô­µã         [6] UACÉèÖÃ
-echo   [7] ·µ»ØÖ÷²Ëµ¥
+echo   [1] ç³»ç»Ÿç—…æ¯’æ‰«æ       [2] æ¶æ„è½¯ä»¶æ¸…é™¤
+echo   [3] é˜²ç«å¢™è®¾ç½®         [4] è´¦æˆ·å¯†ç ä¿®æ”¹
+echo   [5] ç³»ç»Ÿè¿˜åŽŸç‚¹         [6] UACè®¾ç½®
+echo   [7] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 1234567 /N /M "ÇëÑ¡Ôñ°²È«¹¤¾ß [1-7]: "
+choice /C 1234567 /N /M "è¯·é€‰æ‹©å®‰å…¨å·¥å…· [1-7]: "
 
 if errorlevel 7 goto main_menu
 if errorlevel 6 goto uac_settings
@@ -493,22 +507,22 @@ if errorlevel 1 goto virus_scan
 :virus_scan
 cls
 echo =================================================
-echo               ÏµÍ³²¡¶¾É¨Ãè
+echo               ç³»ç»Ÿç—…æ¯’æ‰«æ
 echo =================================================
 echo.
-echo ¾¯¸æ£º´Ë²Ù×÷½«µ÷ÓÃWindows Defender½øÐÐÏµÍ³É¨Ãè¡£
-echo Õâ¿ÉÄÜÐèÒª½Ï³¤Ê±¼ä£¬È¡¾öÓÚÏµÍ³´óÐ¡ºÍÐÔÄÜ¡£
+echo è­¦å‘Šï¼šæ­¤æ“ä½œå°†è°ƒç”¨Windows Defenderè¿›è¡Œç³»ç»Ÿæ‰«æã€‚
+echo è¿™å¯èƒ½éœ€è¦è¾ƒé•¿æ—¶é—´ï¼Œå–å†³äºŽç³»ç»Ÿå¤§å°å’Œæ€§èƒ½ã€‚
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto security_tools
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚÆô¶¯ÏµÍ³²¡¶¾É¨Ãè...
+    echo æ­£åœ¨å¯åŠ¨ç³»ç»Ÿç—…æ¯’æ‰«æ...
     echo.
     Start-MpScan -ScanType FullScan
     echo.
-    echo ÏµÍ³²¡¶¾É¨ÃèÒÑÆô¶¯£¡
-    echo Äú¿ÉÒÔÔÚWindows°²È«ÖÐÐÄ²é¿´É¨Ãè½ø¶È¡£
+    echo ç³»ç»Ÿç—…æ¯’æ‰«æå·²å¯åŠ¨ï¼
+    echo æ‚¨å¯ä»¥åœ¨Windowså®‰å…¨ä¸­å¿ƒæŸ¥çœ‹æ‰«æè¿›åº¦ã€‚
 )
 echo.
 pause
@@ -517,18 +531,18 @@ goto security_tools
 :malware_scan
 cls
 echo =================================================
-echo             ¶ñÒâÈí¼þÇå³ý¹¤¾ß
+echo             æ¶æ„è½¯ä»¶æ¸…é™¤å·¥å…·
 echo =================================================
 echo.
-echo ÕýÔÚ¼ì²éÏµÍ³ÊÇ·ñ°²×°ÁËMicrosoft Safety Scanner...
+echo æ­£åœ¨æ£€æŸ¥ç³»ç»Ÿæ˜¯å¦å®‰è£…äº†Microsoft Safety Scanner...
 echo.
 where mssacli.exe >nul 2>&1
 if %errorlevel%==0 (
-    echo ÒÑ°²×°Microsoft Safety Scanner£¬ÕýÔÚÆô¶¯É¨Ãè...
+    echo å·²å®‰è£…Microsoft Safety Scannerï¼Œæ­£åœ¨å¯åŠ¨æ‰«æ...
     mssacli.exe /scan /full
 ) else (
-    echo Î´°²×°Microsoft Safety Scanner£¬½«´ò¿ªÏÂÔØÒ³Ãæ¡£
-    echo ÇëÏÂÔØ²¢°²×°ºóÔÙÔËÐÐ´Ë¹¤¾ß¡£
+    echo æœªå®‰è£…Microsoft Safety Scannerï¼Œå°†æ‰“å¼€ä¸‹è½½é¡µé¢ã€‚
+    echo è¯·ä¸‹è½½å¹¶å®‰è£…åŽå†è¿è¡Œæ­¤å·¥å…·ã€‚
     start https://www.microsoft.com/security/scanner
 )
 echo.
@@ -538,16 +552,16 @@ goto security_tools
 :firewall_settings
 cls
 echo =================================================
-echo               ·À»ðÇ½ÉèÖÃ
+echo               é˜²ç«å¢™è®¾ç½®
 echo =================================================
 echo.
-echo   [1] ÆôÓÃ·À»ðÇ½         [2] ½ûÓÃ·À»ðÇ½
-echo   [3] ²é¿´·À»ðÇ½×´Ì¬     [4] ·µ»ØÉÏÒ»¼¶
+echo   [1] å¯ç”¨é˜²ç«å¢™         [2] ç¦ç”¨é˜²ç«å¢™
+echo   [3] æŸ¥çœ‹é˜²ç«å¢™çŠ¶æ€     [4] è¿”å›žä¸Šä¸€çº§
 echo.
 echo =================================================
 echo.
 
-choice /C 1234 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-4]: "
+choice /C 1234 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-4]: "
 
 if errorlevel 4 goto security_tools
 if errorlevel 3 goto firewall_status
@@ -556,26 +570,26 @@ if errorlevel 1 goto enable_firewall
 
 :enable_firewall
 cls
-echo ÕýÔÚÆôÓÃWindows Defender·À»ðÇ½...
+echo æ­£åœ¨å¯ç”¨Windows Defenderé˜²ç«å¢™...
 netsh advfirewall set allprofiles state on
 echo.
-echo Windows Defender·À»ðÇ½ÒÑÆôÓÃ£¡
+echo Windows Defenderé˜²ç«å¢™å·²å¯ç”¨ï¼
 echo.
 pause
 goto firewall_settings
 
 :disable_firewall
 cls
-echo ¾¯¸æ£º½ûÓÃ·À»ðÇ½»áÊ¹ÏµÍ³ÃæÁÙ°²È«·çÏÕ£¡
+echo è­¦å‘Šï¼šç¦ç”¨é˜²ç«å¢™ä¼šä½¿ç³»ç»Ÿé¢ä¸´å®‰å…¨é£Žé™©ï¼
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto firewall_settings
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚ½ûÓÃWindows Defender·À»ðÇ½...
+    echo æ­£åœ¨ç¦ç”¨Windows Defenderé˜²ç«å¢™...
     netsh advfirewall set allprofiles state off
     echo.
-    echo Windows Defender·À»ðÇ½ÒÑ½ûÓÃ£¡
+    echo Windows Defenderé˜²ç«å¢™å·²ç¦ç”¨ï¼
 )
 echo.
 pause
@@ -584,7 +598,7 @@ goto firewall_settings
 :firewall_status
 cls
 echo =================================================
-echo             Windows Defender·À»ðÇ½×´Ì¬
+echo             Windows Defenderé˜²ç«å¢™çŠ¶æ€
 echo =================================================
 echo.
 netsh advfirewall show allprofiles
@@ -595,18 +609,18 @@ goto firewall_settings
 :change_password
 cls
 echo =================================================
-echo               ÕË»§ÃÜÂëÐÞ¸Ä
+echo               è´¦æˆ·å¯†ç ä¿®æ”¹
 echo =================================================
 echo.
 net user
 echo.
-set /p username="ÇëÊäÈëÒªÐÞ¸ÄÃÜÂëµÄÓÃ»§Ãû: "
+set /p username="è¯·è¾“å…¥è¦ä¿®æ”¹å¯†ç çš„ç”¨æˆ·å: "
 echo.
-echo ÇëÊäÈëÐÂÃÜÂë£¨²»»áÏÔÊ¾ÔÚÆÁÄ»ÉÏ£©¡£
+echo è¯·è¾“å…¥æ–°å¯†ç ï¼ˆä¸ä¼šæ˜¾ç¤ºåœ¨å±å¹•ä¸Šï¼‰ã€‚
 echo.
 net user %username% *
 echo.
-echo ÃÜÂëÐÞ¸ÄÍê³É£¡
+echo å¯†ç ä¿®æ”¹å®Œæˆï¼
 echo.
 pause
 goto security_tools
@@ -614,16 +628,16 @@ goto security_tools
 :system_restore
 cls
 echo =================================================
-echo               ÏµÍ³»¹Ô­µã
+echo               ç³»ç»Ÿè¿˜åŽŸç‚¹
 echo =================================================
 echo.
-echo   [1] ´´½¨»¹Ô­µã         [2] ²é¿´»¹Ô­µã
-echo   [3] ÏµÍ³»¹Ô­           [4] ·µ»ØÉÏÒ»¼¶
+echo   [1] åˆ›å»ºè¿˜åŽŸç‚¹         [2] æŸ¥çœ‹è¿˜åŽŸç‚¹
+echo   [3] ç³»ç»Ÿè¿˜åŽŸ           [4] è¿”å›žä¸Šä¸€çº§
 echo.
 echo =================================================
 echo.
 
-choice /C 1234 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-4]: "
+choice /C 1234 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-4]: "
 
 if errorlevel 4 goto security_tools
 if errorlevel 3 goto restore_system
@@ -633,15 +647,15 @@ if errorlevel 1 goto create_restore_point
 :create_restore_point
 cls
 echo =================================================
-echo             ´´½¨ÏµÍ³»¹Ô­µã
+echo             åˆ›å»ºç³»ç»Ÿè¿˜åŽŸç‚¹
 echo =================================================
 echo.
-set /p description="ÇëÊäÈë»¹Ô­µãÃèÊö: "
+set /p description="è¯·è¾“å…¥è¿˜åŽŸç‚¹æè¿°: "
 echo.
-echo ÕýÔÚ´´½¨ÏµÍ³»¹Ô­µã£¬ÇëÉÔºò...
+echo æ­£åœ¨åˆ›å»ºç³»ç»Ÿè¿˜åŽŸç‚¹ï¼Œè¯·ç¨å€™...
 powershell -command "Checkpoint-Computer -Description '%description%' -RestorePointType 'MODIFY_SETTINGS'"
 echo.
-echo ÏµÍ³»¹Ô­µã´´½¨Íê³É£¡
+echo ç³»ç»Ÿè¿˜åŽŸç‚¹åˆ›å»ºå®Œæˆï¼
 echo.
 pause
 goto system_restore
@@ -649,7 +663,7 @@ goto system_restore
 :view_restore_points
 cls
 echo =================================================
-echo             ²é¿´ÏµÍ³»¹Ô­µã
+echo             æŸ¥çœ‹ç³»ç»Ÿè¿˜åŽŸç‚¹
 echo =================================================
 echo.
 powershell -command "Get-ComputerRestorePoint"
@@ -660,20 +674,20 @@ goto system_restore
 :restore_system
 cls
 echo =================================================
-echo               ÏµÍ³»¹Ô­
+echo               ç³»ç»Ÿè¿˜åŽŸ
 echo =================================================
 echo.
-echo ¾¯¸æ£ºÏµÍ³»¹Ô­½«°ÑÄúµÄ¼ÆËã»ú»¹Ô­µ½ÒÔÇ°µÄ×´Ì¬¡£
-echo Äú°²×°µÄ³ÌÐòºÍ¸öÈËÎÄ¼þ²»»á±»É¾³ý£¬µ«Ä³Ð©ÉèÖÃ¿ÉÄÜ»á¸ü¸Ä¡£
+echo è­¦å‘Šï¼šç³»ç»Ÿè¿˜åŽŸå°†æŠŠæ‚¨çš„è®¡ç®—æœºè¿˜åŽŸåˆ°ä»¥å‰çš„çŠ¶æ€ã€‚
+echo æ‚¨å®‰è£…çš„ç¨‹åºå’Œä¸ªäººæ–‡ä»¶ä¸ä¼šè¢«åˆ é™¤ï¼Œä½†æŸäº›è®¾ç½®å¯èƒ½ä¼šæ›´æ”¹ã€‚
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto system_restore
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚÆô¶¯ÏµÍ³»¹Ô­Ïòµ¼...
+    echo æ­£åœ¨å¯åŠ¨ç³»ç»Ÿè¿˜åŽŸå‘å¯¼...
     rstrui.exe
     echo.
-    echo ÏµÍ³»¹Ô­Ïòµ¼ÒÑÆô¶¯£¡
+    echo ç³»ç»Ÿè¿˜åŽŸå‘å¯¼å·²å¯åŠ¨ï¼
 )
 echo.
 pause
@@ -682,17 +696,17 @@ goto system_restore
 :uac_settings
 cls
 echo =================================================
-echo               UACÉèÖÃ
+echo               UACè®¾ç½®
 echo =================================================
 echo.
-echo   [1] ¸ß (Ê¼ÖÕÍ¨Öª)      [2] ÖÐ (Ä¬ÈÏÉèÖÃ)
-echo   [3] µÍ (½öÔÚ³ÌÐò³¢ÊÔ¸ü¸ÄÏµÍ³Ê±Í¨Öª)
-echo   [4] ¹Ø±ÕUAC (²»ÍÆ¼ö)   [5] ·µ»ØÉÏÒ»¼¶
+echo   [1] é«˜ (å§‹ç»ˆé€šçŸ¥)      [2] ä¸­ (é»˜è®¤è®¾ç½®)
+echo   [3] ä½Ž (ä»…åœ¨ç¨‹åºå°è¯•æ›´æ”¹ç³»ç»Ÿæ—¶é€šçŸ¥)
+echo   [4] å…³é—­UAC (ä¸æŽ¨è)   [5] è¿”å›žä¸Šä¸€çº§
 echo.
 echo =================================================
 echo.
 
-choice /C 12345 /N /M "ÇëÑ¡ÔñUAC¼¶±ð [1-5]: "
+choice /C 12345 /N /M "è¯·é€‰æ‹©UACçº§åˆ« [1-5]: "
 
 if errorlevel 5 goto security_tools
 if errorlevel 4 goto uac_off
@@ -702,70 +716,70 @@ if errorlevel 1 goto uac_high
 
 :uac_high
 cls
-echo ÕýÔÚÉèÖÃUACÎª¸ß¼¶±ð (Ê¼ÖÕÍ¨Öª)...
+echo æ­£åœ¨è®¾ç½®UACä¸ºé«˜çº§åˆ« (å§‹ç»ˆé€šçŸ¥)...
 powershell -command "Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 2"
 echo.
-echo UACÉèÖÃÒÑ¸üÐÂ£¡
-echo ¸ü¸Ä½«ÔÚÏÂ´ÎµÇÂ¼Ê±ÉúÐ§¡£
+echo UACè®¾ç½®å·²æ›´æ–°ï¼
+echo æ›´æ”¹å°†åœ¨ä¸‹æ¬¡ç™»å½•æ—¶ç”Ÿæ•ˆã€‚
 echo.
 pause
 goto uac_settings
 
 :uac_medium
 cls
-echo ÕýÔÚÉèÖÃUACÎªÖÐ¼¶±ð (Ä¬ÈÏÉèÖÃ)...
+echo æ­£åœ¨è®¾ç½®UACä¸ºä¸­çº§åˆ« (é»˜è®¤è®¾ç½®)...
 powershell -command "Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 5"
 echo.
-echo UACÉèÖÃÒÑ¸üÐÂ£¡
-echo ¸ü¸Ä½«ÔÚÏÂ´ÎµÇÂ¼Ê±ÉúÐ§¡£
+echo UACè®¾ç½®å·²æ›´æ–°ï¼
+echo æ›´æ”¹å°†åœ¨ä¸‹æ¬¡ç™»å½•æ—¶ç”Ÿæ•ˆã€‚
 echo.
 pause
 goto uac_settings
 
 :uac_low
 cls
-echo ÕýÔÚÉèÖÃUACÎªµÍ¼¶±ð (½öÔÚ³ÌÐò³¢ÊÔ¸ü¸ÄÏµÍ³Ê±Í¨Öª)...
+echo æ­£åœ¨è®¾ç½®UACä¸ºä½Žçº§åˆ« (ä»…åœ¨ç¨‹åºå°è¯•æ›´æ”¹ç³»ç»Ÿæ—¶é€šçŸ¥)...
 powershell -command "Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 1"
 echo.
-echo UACÉèÖÃÒÑ¸üÐÂ£¡
-echo ¸ü¸Ä½«ÔÚÏÂ´ÎµÇÂ¼Ê±ÉúÐ§¡£
+echo UACè®¾ç½®å·²æ›´æ–°ï¼
+echo æ›´æ”¹å°†åœ¨ä¸‹æ¬¡ç™»å½•æ—¶ç”Ÿæ•ˆã€‚
 echo.
 pause
 goto uac_settings
 
 :uac_off
 cls
-echo ¾¯¸æ£º¹Ø±ÕUAC»áÊ¹ÏµÍ³ÃæÁÙ°²È«·çÏÕ£¡
+echo è­¦å‘Šï¼šå…³é—­UACä¼šä½¿ç³»ç»Ÿé¢ä¸´å®‰å…¨é£Žé™©ï¼
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto uac_settings
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚ¹Ø±ÕUAC...
+    echo æ­£åœ¨å…³é—­UAC...
     powershell -command "Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0"
     echo.
-    echo UACÒÑ¹Ø±Õ£¡
-    echo ¸ü¸Ä½«ÔÚÏÂ´ÎµÇÂ¼Ê±ÉúÐ§¡£
+    echo UACå·²å…³é—­ï¼
+    echo æ›´æ”¹å°†åœ¨ä¸‹æ¬¡ç™»å½•æ—¶ç”Ÿæ•ˆã€‚
 )
 echo.
 pause
 goto uac_settings
 
-:: ´ÅÅÌ¹ÜÀí¹¤¾ß
+:: ç£ç›˜ç®¡ç†å·¥å…·
 :disk_tools
 cls
 echo =================================================
-echo               ´ÅÅÌ¹ÜÀí¹¤¾ß
+echo               ç£ç›˜ç®¡ç†å·¥å…·
 echo =================================================
 echo.
-echo   [1] ´ÅÅÌ¼ì²é¹¤¾ß       [2] ´ÅÅÌÇåÀí¹¤¾ß
-echo   [3] ´ÅÅÌ¿Õ¼ä·ÖÎö       [4] ·ÖÇø¹ÜÀí¹¤¾ß
-echo   [5] ´ÅÅÌ¸ñÊ½»¯¹¤¾ß     [6] ·µ»ØÖ÷²Ëµ¥
+echo   [1] ç£ç›˜æ£€æŸ¥å·¥å…·       [2] ç£ç›˜æ¸…ç†å·¥å…·
+echo   [3] ç£ç›˜ç©ºé—´åˆ†æž       [4] åˆ†åŒºç®¡ç†å·¥å…·
+echo   [5] ç£ç›˜æ ¼å¼åŒ–å·¥å…·     [6] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 123456 /N /M "ÇëÑ¡Ôñ´ÅÅÌ¹¤¾ß [1-6]: "
+choice /C 123456 /N /M "è¯·é€‰æ‹©ç£ç›˜å·¥å…· [1-6]: "
 
 if errorlevel 6 goto main_menu
 if errorlevel 5 goto format_disk
@@ -777,24 +791,24 @@ if errorlevel 1 goto disk_check
 :disk_check
 cls
 echo =================================================
-echo               ´ÅÅÌ¼ì²é¹¤¾ß
+echo               ç£ç›˜æ£€æŸ¥å·¥å…·
 echo =================================================
 echo.
-echo µ±Ç°ÏµÍ³´ÅÅÌÐÅÏ¢£º
+echo å½“å‰ç³»ç»Ÿç£ç›˜ä¿¡æ¯ï¼š
 wmic logicaldisk where drivetype=3 get deviceid, volumename, freespace, size
 echo.
-set /p drive="ÇëÊäÈëÒª¼ì²éµÄÇý¶¯Æ÷ºÅ (ÀýÈç C): "
+set /p drive="è¯·è¾“å…¥è¦æ£€æŸ¥çš„é©±åŠ¨å™¨å· (ä¾‹å¦‚ C): "
 echo.
-echo ¾¯¸æ£º´ÅÅÌ¼ì²é¿ÉÄÜ»áÐÞ¸´´íÎó£¬µ«¿ÉÄÜ»áÉ¾³ýÒ»Ð©ÎÄ¼þ¡£
+echo è­¦å‘Šï¼šç£ç›˜æ£€æŸ¥å¯èƒ½ä¼šä¿®å¤é”™è¯¯ï¼Œä½†å¯èƒ½ä¼šåˆ é™¤ä¸€äº›æ–‡ä»¶ã€‚
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto disk_tools
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚ¼ì²é %drive%: ´ÅÅÌ£¬ÇëÉÔºò...
+    echo æ­£åœ¨æ£€æŸ¥ %drive%: ç£ç›˜ï¼Œè¯·ç¨å€™...
     chkdsk %drive%: /f /r
     echo.
-    echo ´ÅÅÌ¼ì²éÍê³É£¡
+    echo ç£ç›˜æ£€æŸ¥å®Œæˆï¼
 )
 echo.
 pause
@@ -803,19 +817,19 @@ goto disk_tools
 :disk_cleanup
 cls
 echo =================================================
-echo               ´ÅÅÌÇåÀí¹¤¾ß
+echo               ç£ç›˜æ¸…ç†å·¥å…·
 echo =================================================
 echo.
-echo µ±Ç°ÏµÍ³´ÅÅÌÐÅÏ¢£º
+echo å½“å‰ç³»ç»Ÿç£ç›˜ä¿¡æ¯ï¼š
 wmic logicaldisk where drivetype=3 get deviceid, volumename, freespace, size
 echo.
-set /p drive="ÇëÊäÈëÒªÇåÀíµÄÇý¶¯Æ÷ºÅ (ÀýÈç C): "
+set /p drive="è¯·è¾“å…¥è¦æ¸…ç†çš„é©±åŠ¨å™¨å· (ä¾‹å¦‚ C): "
 echo.
-echo ÕýÔÚÆô¶¯´ÅÅÌÇåÀí¹¤¾ß...
+echo æ­£åœ¨å¯åŠ¨ç£ç›˜æ¸…ç†å·¥å…·...
 cleanmgr /sageset:99
 cleanmgr /sagerun:99
 echo.
-echo ´ÅÅÌÇåÀíÍê³É£¡
+echo ç£ç›˜æ¸…ç†å®Œæˆï¼
 echo.
 pause
 goto disk_tools
@@ -823,18 +837,18 @@ goto disk_tools
 :disk_analyzer
 cls
 echo =================================================
-echo               ´ÅÅÌ¿Õ¼ä·ÖÎö
+echo               ç£ç›˜ç©ºé—´åˆ†æž
 echo =================================================
 echo.
-echo ÕýÔÚ¼ì²éÏµÍ³ÊÇ·ñ°²×°ÁËWinDirStat...
+echo æ­£åœ¨æ£€æŸ¥ç³»ç»Ÿæ˜¯å¦å®‰è£…äº†WinDirStat...
 echo.
 where wds.exe >nul 2>&1
 if %errorlevel%==0 (
-    echo ÒÑ°²×°WinDirStat£¬ÕýÔÚÆô¶¯...
+    echo å·²å®‰è£…WinDirStatï¼Œæ­£åœ¨å¯åŠ¨...
     wds.exe
 ) else (
-    echo Î´°²×°WinDirStat£¬½«´ò¿ªÏÂÔØÒ³Ãæ¡£
-    echo ÇëÏÂÔØ²¢°²×°ºóÔÙÔËÐÐ´Ë¹¤¾ß¡£
+    echo æœªå®‰è£…WinDirStatï¼Œå°†æ‰“å¼€ä¸‹è½½é¡µé¢ã€‚
+    echo è¯·ä¸‹è½½å¹¶å®‰è£…åŽå†è¿è¡Œæ­¤å·¥å…·ã€‚
     start https://windirstat.net/
 )
 echo.
@@ -844,20 +858,20 @@ goto disk_tools
 :partition_manager
 cls
 echo =================================================
-echo               ·ÖÇø¹ÜÀí¹¤¾ß
+echo               åˆ†åŒºç®¡ç†å·¥å…·
 echo =================================================
 echo.
-echo ¾¯¸æ£º´Ë²Ù×÷½«´ò¿ª´ÅÅÌ¹ÜÀí¿ØÖÆÌ¨¡£
-echo ²»ÕýÈ·µÄ²Ù×÷¿ÉÄÜµ¼ÖÂÊý¾Ý¶ªÊ§£¡
+echo è­¦å‘Šï¼šæ­¤æ“ä½œå°†æ‰“å¼€ç£ç›˜ç®¡ç†æŽ§åˆ¶å°ã€‚
+echo ä¸æ­£ç¡®çš„æ“ä½œå¯èƒ½å¯¼è‡´æ•°æ®ä¸¢å¤±ï¼
 echo.
-choice /C YN /N /M "ÊÇ·ñ¼ÌÐø? [Y/N]: "
+choice /C YN /N /M "æ˜¯å¦ç»§ç»­? [Y/N]: "
 if errorlevel 2 goto disk_tools
 if errorlevel 1 (
     echo.
-    echo ÕýÔÚÆô¶¯´ÅÅÌ¹ÜÀí¿ØÖÆÌ¨...
+    echo æ­£åœ¨å¯åŠ¨ç£ç›˜ç®¡ç†æŽ§åˆ¶å°...
     diskmgmt.msc
     echo.
-    echo ´ÅÅÌ¹ÜÀí¿ØÖÆÌ¨ÒÑÆô¶¯£¡
+    echo ç£ç›˜ç®¡ç†æŽ§åˆ¶å°å·²å¯åŠ¨ï¼
 )
 echo.
 pause
@@ -866,53 +880,53 @@ goto disk_tools
 :format_disk
 cls
 echo =================================================
-echo               ´ÅÅÌ¸ñÊ½»¯¹¤¾ß
+echo               ç£ç›˜æ ¼å¼åŒ–å·¥å…·
 echo =================================================
 echo.
-echo ¾¯¸æ£º¸ñÊ½»¯»áÉ¾³ý´ÅÅÌÉÏµÄËùÓÐÊý¾Ý£¡
-echo ÇëÈ·±£ÄúÒÑ±¸·ÝÖØÒªÊý¾Ý¡£
+echo è­¦å‘Šï¼šæ ¼å¼åŒ–ä¼šåˆ é™¤ç£ç›˜ä¸Šçš„æ‰€æœ‰æ•°æ®ï¼
+echo è¯·ç¡®ä¿æ‚¨å·²å¤‡ä»½é‡è¦æ•°æ®ã€‚
 echo.
-echo µ±Ç°ÏµÍ³´ÅÅÌÐÅÏ¢£º
+echo å½“å‰ç³»ç»Ÿç£ç›˜ä¿¡æ¯ï¼š
 wmic logicaldisk where drivetype=3 get deviceid, volumename, freespace, size
 echo.
-set /p drive="ÇëÊäÈëÒª¸ñÊ½»¯µÄÇý¶¯Æ÷ºÅ (ÀýÈç D): "
+set /p drive="è¯·è¾“å…¥è¦æ ¼å¼åŒ–çš„é©±åŠ¨å™¨å· (ä¾‹å¦‚ D): "
 echo.
-choice /C YN /N /M "È·¶¨Òª¸ñÊ½»¯ %drive%: Âð? [Y/N]: "
+choice /C YN /N /M "ç¡®å®šè¦æ ¼å¼åŒ– %drive%: å—? [Y/N]: "
 if errorlevel 2 goto disk_tools
 if errorlevel 1 (
     echo.
-    echo ÇëÑ¡ÔñÎÄ¼þÏµÍ³:
+    echo è¯·é€‰æ‹©æ–‡ä»¶ç³»ç»Ÿ:
     echo   [1] NTFS   [2] FAT32   [3] exFAT
     echo.
-    choice /C 123 /N /M "ÇëÑ¡Ôñ [1-3]: "
+    choice /C 123 /N /M "è¯·é€‰æ‹© [1-3]: "
     if errorlevel 3 set fs=exFAT
     if errorlevel 2 set fs=FAT32
     if errorlevel 1 set fs=NTFS
     
     echo.
-    echo ÕýÔÚ¸ñÊ½»¯ %drive%: Îª %fs% ÎÄ¼þÏµÍ³...
+    echo æ­£åœ¨æ ¼å¼åŒ– %drive%: ä¸º %fs% æ–‡ä»¶ç³»ç»Ÿ...
     format %drive%: /FS:%fs% /Q /Y
     echo.
-    echo ´ÅÅÌ¸ñÊ½»¯Íê³É£¡
+    echo ç£ç›˜æ ¼å¼åŒ–å®Œæˆï¼
 )
 echo.
 pause
 goto disk_tools
 
-:: ÏµÍ³ÐÅÏ¢¹¤¾ß
+:: ç³»ç»Ÿä¿¡æ¯å·¥å…·
 :system_info
 cls
 echo =================================================
-echo               ÏµÍ³ÐÅÏ¢¹¤¾ß
+echo               ç³»ç»Ÿä¿¡æ¯å·¥å…·
 echo =================================================
 echo.
-echo   [1] ÏµÍ³ÐÅÏ¢      
-echo   [2] ÏµÍ³ÈÕÖ¾              [3] ·µ»ØÖ÷²Ëµ¥
+echo   [1] ç³»ç»Ÿä¿¡æ¯      
+echo   [2] ç³»ç»Ÿæ—¥å¿—              [3] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 123 /N /M "ÇëÑ¡Ôñ [1-3]: "
+choice /C 123 /N /M "è¯·é€‰æ‹© [1-3]: "
 
 if errorlevel 3 goto main_menu
 if errorlevel 2 goto system_logs
@@ -921,31 +935,31 @@ if errorlevel 1 goto basic_info
 :basic_info
 cls
 echo =================================================
-echo               »ù±¾ÏµÍ³ÐÅÏ¢
+echo               åŸºæœ¬ç³»ç»Ÿä¿¡æ¯
 echo =================================================
 echo.
 systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type" /C:"Total Physical Memory"
 echo.
-echo ¼ÆËã»úÃû³Æ: %COMPUTERNAME%
-echo µ±Ç°ÓÃ»§: %USERNAME%
-echo µ±Ç°ÈÕÆÚ: %DATE%
-echo µ±Ç°Ê±¼ä: %TIME%
+echo è®¡ç®—æœºåç§°: %COMPUTERNAME%
+echo å½“å‰ç”¨æˆ·: %USERNAME%
+echo å½“å‰æ—¥æœŸ: %DATE%
+echo å½“å‰æ—¶é—´: %TIME%
 echo.
 pause
 goto system_info
 
 echo =================================================
-echo               ÏµÍ³ÈÕÖ¾
+echo               ç³»ç»Ÿæ—¥å¿—
 echo =================================================
 echo.
-echo   [1] ÏµÍ³ÈÕÖ¾           [2] Ó¦ÓÃ³ÌÐòÈÕÖ¾
-echo   [3] °²È«ÈÕÖ¾           [4] °²×°ÈÕÖ¾
-echo   [5] ·µ»ØÉÏÒ»¼¶
+echo   [1] ç³»ç»Ÿæ—¥å¿—           [2] åº”ç”¨ç¨‹åºæ—¥å¿—
+echo   [3] å®‰å…¨æ—¥å¿—           [4] å®‰è£…æ—¥å¿—
+echo   [5] è¿”å›žä¸Šä¸€çº§
 echo.
 echo =================================================
 echo.
 
-choice /C 12345 /N /M "ÇëÑ¡ÔñÈÕÖ¾Àà±ð [1-5]: "
+choice /C 12345 /N /M "è¯·é€‰æ‹©æ—¥å¿—ç±»åˆ« [1-5]: "
 
 if errorlevel 5 goto system_info
 if errorlevel 4 goto setup_logs
@@ -956,10 +970,10 @@ if errorlevel 1 goto system_event_logs
 :system_event_logs
 cls
 echo =================================================
-echo               ÏµÍ³ÈÕÖ¾
+echo               ç³»ç»Ÿæ—¥å¿—
 echo =================================================
 echo.
-echo ÕýÔÚÆô¶¯ÏµÍ³ÊÂ¼þÈÕÖ¾²é¿´Æ÷...
+echo æ­£åœ¨å¯åŠ¨ç³»ç»Ÿäº‹ä»¶æ—¥å¿—æŸ¥çœ‹å™¨...
 eventvwr.msc /c:System
 echo.
 pause
@@ -968,10 +982,10 @@ goto system_logs
 :application_logs
 cls
 echo =================================================
-echo             Ó¦ÓÃ³ÌÐòÈÕÖ¾
+echo             åº”ç”¨ç¨‹åºæ—¥å¿—
 echo =================================================
 echo.
-echo ÕýÔÚÆô¶¯Ó¦ÓÃ³ÌÐòÊÂ¼þÈÕÖ¾²é¿´Æ÷...
+echo æ­£åœ¨å¯åŠ¨åº”ç”¨ç¨‹åºäº‹ä»¶æ—¥å¿—æŸ¥çœ‹å™¨...
 eventvwr.msc /c:Application
 echo.
 pause
@@ -980,10 +994,10 @@ goto system_logs
 :security_logs
 cls
 echo =================================================
-echo               °²È«ÈÕÖ¾
+echo               å®‰å…¨æ—¥å¿—
 echo =================================================
 echo.
-echo ÕýÔÚÆô¶¯°²È«ÊÂ¼þÈÕÖ¾²é¿´Æ÷...
+echo æ­£åœ¨å¯åŠ¨å®‰å…¨äº‹ä»¶æ—¥å¿—æŸ¥çœ‹å™¨...
 eventvwr.msc /c:Security
 echo.
 pause
@@ -992,30 +1006,30 @@ goto system_logs
 :setup_logs
 cls
 echo =================================================
-echo               °²×°ÈÕÖ¾
+echo               å®‰è£…æ—¥å¿—
 echo =================================================
 echo.
-echo ÕýÔÚÆô¶¯°²×°ÊÂ¼þÈÕÖ¾²é¿´Æ÷...
+echo æ­£åœ¨å¯åŠ¨å®‰è£…äº‹ä»¶æ—¥å¿—æŸ¥çœ‹å™¨...
 eventvwr.msc /c:Setup
 echo.
 pause
 goto system_logs
 
-:: ¿ì½ÝÉèÖÃ¹¤¾ß
+:: å¿«æ·è®¾ç½®å·¥å…·
 :settings_menu
 cls
 echo =================================================
-echo               ¿ì½ÝÉèÖÃ¹¤¾ß
+echo               å¿«æ·è®¾ç½®å·¥å…·
 echo =================================================
 echo.
-echo   [1] ÏÔÊ¾ÉèÖÃ           [2] ÉùÒôÉèÖÃ
-echo   [3] ÍøÂçÉèÖÃ           [4] Ê±¼äºÍÈÕÆÚ
-echo   [5] ÓÃ»§ÕË»§ÉèÖÃ     [6] ·µ»ØÖ÷²Ëµ¥
+echo   [1] æ˜¾ç¤ºè®¾ç½®           [2] å£°éŸ³è®¾ç½®
+echo   [3] ç½‘ç»œè®¾ç½®           [4] æ—¶é—´å’Œæ—¥æœŸ
+echo   [5] ç”¨æˆ·è´¦æˆ·è®¾ç½®     [6] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 123456 /N /M "ÇëÑ¡ÔñÉèÖÃÀà±ð [1-6]: "
+choice /C 123456 /N /M "è¯·é€‰æ‹©è®¾ç½®ç±»åˆ« [1-6]: "
 
 if errorlevel 6 goto main_menu
 if errorlevel 5 goto user_accounts
@@ -1027,10 +1041,10 @@ if errorlevel 1 goto display_settings
 :display_settings
 cls
 echo =================================================
-echo               ÏÔÊ¾ÉèÖÃ
+echo               æ˜¾ç¤ºè®¾ç½®
 echo =================================================
 echo.
-echo ÕýÔÚ´ò¿ªÏÔÊ¾ÉèÖÃ...
+echo æ­£åœ¨æ‰“å¼€æ˜¾ç¤ºè®¾ç½®...
 control display
 echo.
 pause
@@ -1039,10 +1053,10 @@ goto settings_menu
 :sound_settings
 cls
 echo =================================================
-echo               ÉùÒôÉèÖÃ
+echo               å£°éŸ³è®¾ç½®
 echo =================================================
 echo.
-echo ÕýÔÚ´ò¿ªÉùÒôÉèÖÃ...
+echo æ­£åœ¨æ‰“å¼€å£°éŸ³è®¾ç½®...
 control mmsys.cpl sounds
 echo.
 pause
@@ -1051,10 +1065,10 @@ goto settings_menu
 :network_settings
 cls
 echo =================================================
-echo               ÍøÂçÉèÖÃ
+echo               ç½‘ç»œè®¾ç½®
 echo =================================================
 echo.
-echo ÕýÔÚ´ò¿ªÍøÂçÁ¬½ÓÉèÖÃ...
+echo æ­£åœ¨æ‰“å¼€ç½‘ç»œè¿žæŽ¥è®¾ç½®...
 control ncpa.cpl
 echo.
 pause
@@ -1063,10 +1077,10 @@ goto settings_menu
 :time_date
 cls
 echo =================================================
-echo             Ê±¼äºÍÈÕÆÚÉèÖÃ
+echo             æ—¶é—´å’Œæ—¥æœŸè®¾ç½®
 echo =================================================
 echo.
-echo ÕýÔÚ´ò¿ªÊ±¼äºÍÈÕÆÚÉèÖÃ...
+echo æ­£åœ¨æ‰“å¼€æ—¶é—´å’Œæ—¥æœŸè®¾ç½®...
 control timedate.cpl
 echo.
 pause
@@ -1075,62 +1089,62 @@ goto settings_menu
 :user_accounts
 cls
 echo =================================================
-echo             ÓÃ»§ÕË»§ÉèÖÃ
+echo             ç”¨æˆ·è´¦æˆ·è®¾ç½®
 echo =================================================
 echo.
-echo ÕýÔÚ´ò¿ªÓÃ»§ÕË»§ÉèÖÃ...
+echo æ­£åœ¨æ‰“å¼€ç”¨æˆ·è´¦æˆ·è®¾ç½®...
 control userpasswords2
 echo.
 pause
 goto settings_menu
-:: ÆäËûÊµÓÃ¹¤¾ß
+:: å…¶ä»–å®žç”¨å·¥å…·
 
-::¹¤¾ßÏäÐÅÏ¢
+::å·¥å…·ç®±ä¿¡æ¯
 :toolbox_info
 cls
 echo =================================================
-echo               ¹¤¾ßÏäÐÅÏ¢
+echo               å·¥å…·ç®±ä¿¡æ¯
 echo =================================================
 echo.
-echo ÕâÊÇÒ»¸ö»ùÓÚÅú´¦Àí£¨batch£©¿ª·¢µÄ³¬ÊµÓÃÎ¢¹¤¾ßÏä¡£
+echo è¿™æ˜¯ä¸€ä¸ªåŸºäºŽæ‰¹å¤„ç†ï¼ˆbatchï¼‰å¼€å‘çš„è¶…å®žç”¨å¾®å·¥å…·ç®±ã€‚
 echo.
-echo Õâ¸ö¹¤¾ßÏäÓÉÁ½¸öÑ§Éú¹²Í¬¿ª·¢£¬Í¨¹ýÉÏÇ§ÐÐ´úÂë£¬ÖÂÁ¦ÓÚ´òÔìÒ»¸öÍêÃÀµÄÊµÓÃ¹¤¾ßÏä¡£
-echo ±¾¹¤¾ßÏäÃæÏòÓÚÓÐ¾­ÑéµÄÈËÊ¿½øÐÐÏµÍ³Î¬»¤£¨Ð¡°×ÆäÊµÒ²ÐÐ£©¡£
-echo »¶Ó­¸÷Î»Ìá³ö±¦¹óµÄ½¨ÒéÅ¶
+echo è¿™ä¸ªå·¥å…·ç®±ç”±ä¸¤ä¸ªå­¦ç”Ÿå…±åŒå¼€å‘ï¼Œé€šè¿‡ä¸Šåƒè¡Œä»£ç ï¼Œè‡´åŠ›äºŽæ‰“é€ ä¸€ä¸ªå®Œç¾Žçš„å®žç”¨å·¥å…·ç®±ã€‚
+echo æœ¬å·¥å…·ç®±é¢å‘äºŽæœ‰ç»éªŒçš„äººå£«è¿›è¡Œç³»ç»Ÿç»´æŠ¤ï¼ˆå°ç™½å…¶å®žä¹Ÿè¡Œï¼‰ã€‚
+echo æ¬¢è¿Žå„ä½æå‡ºå®è´µçš„å»ºè®®å“¦
 echo.
-echo QQ½»Á÷Èº£º932691274
-echo GitHub²Ö¿â£ºhttps://github.com/ClarkCheng3/happytoolbox
+echo QQäº¤æµç¾¤ï¼š932691274
+echo GitHubä»“åº“ï¼šhttps://github.com/ClarkCheng3/happytoolbox
 echo.
-echo Èç¹ûÄúÖ§³ÖÎÒÃÇÓÃÉÏÇ§ÐÐ´úÂë´òÔìµÄ¹¤¾ßÏä£¬²¢Ï£ÍûÎÒÃÇ¼ÌÐø¸üÐÂÉý¼¶£¬ÇëÔÞÖúÎÒÃÇ
+echo å¦‚æžœæ‚¨æ”¯æŒæˆ‘ä»¬ç”¨ä¸Šåƒè¡Œä»£ç æ‰“é€ çš„å·¥å…·ç®±ï¼Œå¹¶å¸Œæœ›æˆ‘ä»¬ç»§ç»­æ›´æ–°å‡çº§ï¼Œè¯·èµžåŠ©æˆ‘ä»¬
 echo.
 echo.
-echo [1] ´ò¿ªGithub²Ö¿â    [2]·µ»ØÖ÷²Ëµ¥
-choice /C 12 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-2]: "
+echo [1] æ‰“å¼€Githubä»“åº“    [2]è¿”å›žä¸»èœå•
+choice /C 12 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-2]: "
 
 if errorlevel 2 goto main_menu
 if errorlevel 1 goto start_github
 
-::´ò¿ª²Ö¿â
+::æ‰“å¼€ä»“åº“
 :start_github
 cls
-echo ÕýÔÚ´ò¿ª²Ö¿â...
+echo æ­£åœ¨æ‰“å¼€ä»“åº“...
 start https://github.com/ClarkCheng3/happytoolbox
-echo ÒÑ´ò¿ª²Ö¿â
+echo å·²æ‰“å¼€ä»“åº“
 goto toolbox_info
 
 :other_tools
 cls
 echo =================================================
-echo               ÆäËûÊµÓÃ¹¤¾ß
+echo               å…¶ä»–å®žç”¨å·¥å…·
 echo =================================================
 echo.
-echo   [1] ÃüÁîÌáÊ¾·û         [2] PowerShell
-echo   [3] ·µ»ØÖ÷²Ëµ¥
+echo   [1] å‘½ä»¤æç¤ºç¬¦         [2] PowerShell
+echo   [3] è¿”å›žä¸»èœå•
 echo.
 echo =================================================
 echo.
 
-choice /C 123 /N /M "ÇëÑ¡Ôñ¹¤¾ß [1-3,0]: "
+choice /C 123 /N /M "è¯·é€‰æ‹©å·¥å…· [1-3,0]: "
 
 if errorlevel 3 goto main_menu
 if errorlevel 2 goto powershell
@@ -1139,13 +1153,13 @@ if errorlevel 1 goto cmd_prompt
 :cmd_prompt
 cls
 echo =================================================
-echo             ÃüÁîÌáÊ¾·û
+echo             å‘½ä»¤æç¤ºç¬¦
 echo =================================================
 echo.
-echo ÕýÔÚÆô¶¯ÃüÁîÌáÊ¾·û...
+echo æ­£åœ¨å¯åŠ¨å‘½ä»¤æç¤ºç¬¦...
 start cmd.exe
 echo.
-echo ÃüÁîÌáÊ¾·ûÒÑÆô¶¯
+echo å‘½ä»¤æç¤ºç¬¦å·²å¯åŠ¨
 echo.
 pause
 goto other_tools
@@ -1156,10 +1170,10 @@ echo =================================================
 echo             PowerShell
 echo =================================================
 echo.
-echo ÕýÔÚÆô¶¯PowerShell...
+echo æ­£åœ¨å¯åŠ¨PowerShell...
 start powershell.exe
 echo.
-echo PowerShellÒÑÆô¶¯
+echo PowerShellå·²å¯åŠ¨
 echo.
 pause
 goto other_tools
@@ -1167,9 +1181,9 @@ goto other_tools
 :exit
 cls
 echo =================================================
-echo           ¸ÐÐ»Ê¹ÓÃWindowsÊµÓÃ¹¤¾ßÏä£¡
+echo           æ„Ÿè°¢ä½¿ç”¨Windowså®žç”¨å·¥å…·ç®±ï¼
 echo =================================================
 echo.
-echo ¹¤¾ßÏäÒÑ×¼±¸ºÃÍË³ö...
+echo å·¥å…·ç®±å·²å‡†å¤‡å¥½é€€å‡º...
 timeout /t 2 >nul
 exit /b 0
