@@ -1,184 +1,256 @@
-::Happyå·¥å…·ç®±çš„Ollamaç»„ä»¶
-::åŠ¡å¿…ä½¿ç”¨ANSIç¼–ç 
+::Happy¹¤¾ßÏäµÄOllama×é¼þ
 @echo off
+setlocal EnableExtensions EnableDelayedExpansion
+
 :main
-::ä¸»ç•Œé¢
-title Ollamaç»„ä»¶
+::Ö÷½çÃæ
+cls
+title Ollama×é¼þ
 echo ============================================
-echo                Ollamaç»„ä»¶
+echo                Ollama×é¼þ
 echo ============================================
 echo.
-echo     [1]  å¿«é€Ÿå¯åŠ¨èœå•     [2]  Ollamaæ“ä½œ
-echo     [3]  å®‰è£…Ollama      [0]  é€€å‡ºæœ¬ç»„ä»¶
+echo     [1]  ¿ìËÙÆô¶¯²Ëµ¥     [2]  Ollama²Ù×÷
+echo     [3]  °²×°Ollama      [0]  ÍË³ö±¾×é¼þ
 echo.
 echo ============================================
-choice /C 1230 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-3,0]: "
+choice /C 1230 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-3,0]: "
+:: CHOICE ·µ»ØµÄÊÇ°´ /C ÖÐ×Ö·ûÅÅÁÐµÄÎ»ÖÃ£»ÕâÀï 0 ÊÇµÚ 4 ¸öÑ¡Ïî¡£
+if errorlevel 4 exit /b 0
 if errorlevel 3 goto install_ollama
 if errorlevel 2 goto ollama_operations
 if errorlevel 1 goto quick_start_menu
-if errorlevel 0 exit
+
+goto main
 
 :quick_start_menu
-ï¼šï¼šå¿«é€Ÿå¯åŠ¨èœå•
-clear
-title å¿«é€Ÿå¯åŠ¨èœå•
+::¿ìËÙÆô¶¯²Ëµ¥
+cls
+title ¿ìËÙÆô¶¯²Ëµ¥
 echo ============================================
-echo                å¿«é€Ÿå¯åŠ¨èœå•
+echo                ¿ìËÙÆô¶¯²Ëµ¥
 echo ============================================
 echo.
-echo    [1]è¿è¡ŒGemma4
-echo    [2]è¿è¡ŒDeepSeek-R1
-echo    [3]è¿è¡ŒQwen3.5:0.8b  (éžä½Žé…æœºå™¨ä¸å»ºè®®ä½¿ç”¨)
-echo    [4]è¿è¡ŒGPT-OSS  (é«˜é…æœºå™¨é€‚åˆ)
-echo    [5]è¿è¡ŒGPT-OSS-Safeguard(è²Œä¼¼æ›´å®‰å…¨ï¼Ÿ)
-echo    [8]è¿è¡Œè‡ªå®šä¹‰æ¨¡åž‹
-echo    [9]é…ç½®è‡ªå®šä¹‰æ¨¡åž‹
-echo    [0]è¿”å›žä¸Šçº§èœå•
+echo    [1]ÔËÐÐGemma4
+echo    [2]ÔËÐÐDeepSeek-R1
+echo    [3]ÔËÐÐQwen3.5:0.8b  (·ÇµÍÅä»úÆ÷²»½¨ÒéÊ¹ÓÃ)
+echo    [4]ÔËÐÐGPT-OSS  (¸ßÅä»úÆ÷ÊÊºÏ)
+echo    [5]ÔËÐÐGPT-OSS-Safeguard(Ã²ËÆ¸ü°²È«£¿)
+echo    [6]ÔËÐÐ×Ô¶¨ÒåÄ£ÐÍ
+echo    [7]ÅäÖÃ×Ô¶¨ÒåÄ£ÐÍ
+echo    [0]·µ»ØÉÏ¼¶²Ëµ¥
 echo.
 echo ============================================
-choice /C 12345890 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-5,8-9,0]: "
-if errorlevel 1 goto run_gemma4
-if errorlevel 2 goto run_deepseek_r1
-if errorlevel 3 goto run_qwen35_08b
-if errorlevel 4 goto run_gpt_oss
+choice /C 12345670 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-7,0]: "
+:: /C ÖÐµÄ 0 ÊÇµÚ 8 ¸öÑ¡Ïî£¬±ØÐëÏÈ¼ì²é×î¸ß·µ»ØÖµ¡£
+if errorlevel 8 goto main
+if errorlevel 7 goto configure_custom_model
+if errorlevel 6 goto run_custom_model
 if errorlevel 5 goto run_gpt_oss_safeguard
-if errorlevel 8 goto run_custom_model
-if errorlevel 9 goto configure_custom_model
-if errorlevel 0 goto main
+if errorlevel 4 goto run_gpt_oss
+if errorlevel 3 goto run_qwen35_08b
+if errorlevel 2 goto run_deepseek_r1
+if errorlevel 1 goto run_gemma4
 
-::ä¸‹é¢æ˜¯è·‘æ¨¡åž‹çš„å‘½ä»¤
-::æ„Ÿè°¢VSCodeï¼ŒAIç¡®å®žèƒ½åœ¨é‡å¤æ€§çš„å·¥ä½œä¸Šååˆ†å‡ºè‰²ï¼ŒæœŸå¾…æœªæ¥çš„è¡¨çŽ°
+goto quick_start_menu
+
+:ensure_ollama
+where ollama >nul 2>&1
+if errorlevel 1 (
+    echo Î´¼ì²âµ½ Ollama ÃüÁî£¬ÇëÏÈ°²×° Ollama¡£
+    echo [1] Á¢¼´°²×° [2] ·µ»ØÖ÷²Ëµ¥
+    choice /C 12 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-2]: "
+    if errorlevel 2 goto main
+    if errorlevel 1 goto install_ollama
+    goto main
+)
+exit /b 0
+
 :run_gemma4
-clear
-title è¿è¡ŒGemma4
-echo è¿è¡ŒGemma4
+call :ensure_ollama
+cls
+title ÔËÐÐGemma4
+echo ÔËÐÐGemma4
+echo ÕýÔÚÆô¶¯ gemma4...
 ollama run gemma4
-echo å·²ç»“æŸã€‚
+echo ÒÑ½áÊø¡£
 timeout /t 3 /nobreak >nul
 goto quick_start_menu
 
 :run_deepseek_r1
-clear
-title è¿è¡ŒDeepSeek-R1
-echo è¿è¡ŒDeepSeek-R1
+call :ensure_ollama
+cls
+title ÔËÐÐDeepSeek-R1
+echo ÔËÐÐDeepSeek-R1
+echo ÕýÔÚÆô¶¯ deepseek-r1...
 ollama run deepseek-r1
-echo å·²ç»“æŸã€‚
+echo ÒÑ½áÊø¡£
 timeout /t 3 /nobreak >nul
 goto quick_start_menu
 
 :run_qwen35_08b
-clear
-title è¿è¡ŒQwen3.5:0.8b
-echo è¿è¡ŒQwen3.5:0.8b
+call :ensure_ollama
+cls
+title ÔËÐÐQwen3.5:0.8b
+echo ÔËÐÐQwen3.5:0.8b
+echo ÕýÔÚÆô¶¯ qwen3.5:0.8b...
 ollama run qwen3.5:0.8b
-echo å·²ç»“æŸã€‚
+echo ÒÑ½áÊø¡£
 timeout /t 3 /nobreak >nul
 goto quick_start_menu
 
 :run_gpt_oss
-clear
-title è¿è¡ŒGPT-OSS
-echo è¿è¡ŒGPT-OSS
+call :ensure_ollama
+cls
+title ÔËÐÐGPT-OSS
+echo ÔËÐÐGPT-OSS
+echo ÕýÔÚÆô¶¯ gpt-oss...
 ollama run gpt-oss
-echo å·²ç»“æŸã€‚
+echo ÒÑ½áÊø¡£
 timeout /t 3 /nobreak >nul
 goto quick_start_menu
 
 :run_gpt_oss_safeguard
-clear
-title è¿è¡ŒGPT-OSS-Safeguard
-echo è¿è¡ŒGPT-OSS-Safeguard
+call :ensure_ollama
+cls
+title ÔËÐÐGPT-OSS-Safeguard
+echo ÔËÐÐGPT-OSS-Safeguard
+echo ÕýÔÚÆô¶¯ gpt-oss-safeguard...
 ollama run gpt-oss-safeguard
-echo å·²ç»“æŸã€‚
+echo ÒÑ½áÊø¡£
 timeout /t 3 /nobreak >nul
 goto quick_start_menu
 
-::çŽ¯å¢ƒå˜é‡è¿˜ä¸å¤ªç†Ÿç»ƒï¼Œä¸çŸ¥é“è¡Œä¸è¡Œçš„é€š
-
 :run_custom_model
-clear
-title è¿è¡Œè‡ªå®šä¹‰æ¨¡åž‹
-echo è¿è¡Œè‡ªå®šä¹‰æ¨¡åž‹
-ollama run %OllamaTools_CustomModel%
-echo å·²ç»“æŸã€‚
+call :ensure_ollama
+if not defined OllamaTools_CustomModel (
+    echo Î´ÅäÖÃ×Ô¶¨ÒåÄ£ÐÍ£¬ÇëÏÈÖ´ÐÐ¡°ÅäÖÃ×Ô¶¨ÒåÄ£ÐÍ¡±¡£
+    timeout /t 3 /nobreak >nul
+    goto quick_start_menu
+)
+cls
+title ÔËÐÐ×Ô¶¨ÒåÄ£ÐÍ
+echo ÔËÐÐ×Ô¶¨ÒåÄ£ÐÍ
+echo ÕýÔÚÆô¶¯ %OllamaTools_CustomModel%...
+ollama run "%OllamaTools_CustomModel%"
+echo ÒÑ½áÊø¡£
 timeout /t 3 /nobreak >nul
 goto quick_start_menu
 
 :configure_custom_model
-clear
-title é…ç½®è‡ªå®šä¹‰æ¨¡åž‹
-echo é…ç½®è‡ªå®šä¹‰æ¨¡åž‹
-setx /p OllamaTools_CustomModel=è¯·è¾“å…¥è‡ªå®šä¹‰æ¨¡åž‹åç§°(ä¾‹å¦‚ï¼šdeepseek-r1):
-echo å·²é…ç½®è‡ªå®šä¹‰æ¨¡åž‹ä¸ºï¼š%OllamaTools_CustomModel%
-echo å³å°†é‡å¯ç»„ä»¶ä»¥ç”Ÿæ•ˆ
-timeout /t 3 /nobreak >nul
-start %0
-exit
+cls
+title ÅäÖÃ×Ô¶¨ÒåÄ£ÐÍ
+echo ÅäÖÃ×Ô¶¨ÒåÄ£ÐÍ
+set /p "custom_model_name=ÇëÊäÈë×Ô¶¨ÒåÄ£ÐÍÃû³Æ(ÀýÈç£ºdeepseek-r1): "
+if not defined custom_model_name (
+    echo Î´ÊäÈëÄ£ÐÍÃû³Æ£¬ÒÑÈ¡ÏûÅäÖÃ¡£
+    timeout /t 2 /nobreak >nul
+    goto quick_start_menu
+)
+set "OllamaTools_CustomModel=%custom_model_name%"
+setx OllamaTools_CustomModel "%OllamaTools_CustomModel%" >nul
+echo ÒÑÅäÖÃ×Ô¶¨ÒåÄ£ÐÍÎª£º%OllamaTools_CustomModel%
+echo ¼´½«·µ»Ø²Ëµ¥...
+timeout /t 2 /nobreak >nul
+goto quick_start_menu
 
 :ollama_operations
-clear
-title Ollamaæ“ä½œ
+call :ensure_ollama
+cls
+title Ollama²Ù×÷
 echo ============================================
-echo               Ollamaæ“ä½œ
+echo               Ollama²Ù×÷
 echo ============================================
 echo.
-echo   [1]åˆ—å‡ºå·²æœ‰çš„æ¨¡åž‹
-echo   [2]åˆ é™¤æ¨¡åž‹
-echo   [0]è¿”å›žä¸Šçº§èœå•
+echo   [1]ÁÐ³öÒÑÓÐµÄÄ£ÐÍ
+echo   [2]É¾³ýÄ£ÐÍ
+echo   [0]·µ»ØÉÏ¼¶²Ëµ¥
 echo.
 echo ============================================
-choice /C 120 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-2,0]: "
+choice /C 120 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-2,0]: "
+:: /C ÖÐµÄ 0 ÊÇµÚ 3 ¸öÑ¡Ïî¡£
+if errorlevel 3 goto main
 if errorlevel 2 goto delete_model
 if errorlevel 1 goto list_models
-if errorlevel 0 goto main
+
+goto ollama_operations
 
 :list_models
-clear
-title åˆ—å‡ºå·²æœ‰çš„æ¨¡åž‹
-echo åˆ—å‡ºå·²æœ‰çš„æ¨¡åž‹
+cls
+title ÁÐ³öÒÑÓÐµÄÄ£ÐÍ
+echo ÁÐ³öÒÑÓÐµÄÄ£ÐÍ
 ollama list
 pause
 goto ollama_operations
 
 :delete_model
-clear
-title åˆ é™¤æ¨¡åž‹
-set /p del_model_name=è¯·è¾“å…¥è¦åˆ é™¤çš„æ¨¡åž‹åç§°:
+cls
+title É¾³ýÄ£ÐÍ
+set /p "del_model_name=ÇëÊäÈëÒªÉ¾³ýµÄÄ£ÐÍÃû³Æ: "
+if not defined del_model_name (
+    echo Î´ÊäÈëÄ£ÐÍÃû³Æ£¬ÒÑÈ¡ÏûÉ¾³ý¡£
+    timeout /t 2 /nobreak >nul
+    goto ollama_operations
+)
+if /I "%del_model_name%"=="all" (
+    echo ÎªÁË°²È«£¬¾Ü¾øÉ¾³ý "all" ¹Ø¼ü´Ê£¬ÒÑÈ¡Ïû¡£
+    timeout /t 2 /nobreak >nul
+    goto ollama_operations
+)
 echo.
-::åº”è¯¥æ²¡äººè¯¯åˆ äº†å§ã€‚ã€‚
-echo ç¡®è®¤è¦åˆ é™¤å—ï¼Ÿ(1)æ˜¯  (2)å¦
-choice /C 12 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-2]: "
+echo È·ÈÏÒªÉ¾³ýÄ£ÐÍ "%del_model_name%" Âð£¿(1)ÊÇ  (2)·ñ
+choice /C 12 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-2]: "
 if errorlevel 2 goto ollama_operations
-if errorlevel 1 echo æ­£åœ¨åˆ é™¤æ¨¡åž‹ï¼š%del_model_name%
-ollama rm %del_model_name%
-echo å·²åˆ é™¤æ¨¡åž‹ï¼š%del_model_name%
+if not errorlevel 1 goto ollama_operations
+echo ÕýÔÚÉ¾³ýÄ£ÐÍ£º%del_model_name%
+ollama rm "%del_model_name%"
+if errorlevel 1 (
+    echo É¾³ýÊ§°Ü£¬¿ÉÄÜÄ£ÐÍ²»´æÔÚ»ò·þÎñÎ´ÔËÐÐ¡£
+) else (
+    echo ÒÑÉ¾³ýÄ£ÐÍ£º%del_model_name%
+)
 timeout /t 5 /nobreak >nul
 goto ollama_operations
 
 :install_ollama
-::æ„Ÿè°¢è„šæœ¬ï¼Œç¡®å®žæœ‰ç”¨:)
-clear
-title å®‰è£…Ollama
+cls
+title °²×°Ollama
 echo ============================================
-echo               å®‰è£…Ollama
+echo               °²×°Ollama
 echo ============================================
 echo.
-echo     [1]æ‰“å¼€Ollamaå®˜ç½‘
-echo     [2]ä½¿ç”¨å®˜æ–¹è„šæœ¬è‡ªåŠ¨å®‰è£…
-echo     [0]è¿”å›žä¸Šçº§èœå•
+echo     [1]´ò¿ªOllama¹ÙÍø
+echo     [2]Ê¹ÓÃ¹Ù·½½Å±¾×Ô¶¯°²×°
+echo     [0]·µ»ØÉÏ¼¶²Ëµ¥
 echo.
 echo ============================================
-choice /C 120 /N /M "è¯·é€‰æ‹©æ“ä½œ [1-3,0]: "
+choice /C 120 /N /M "ÇëÑ¡Ôñ²Ù×÷ [1-2,0]: "
+:: /C ÖÐµÄ 0 ÊÇµÚ 3 ¸öÑ¡Ïî¡£
+if errorlevel 3 goto main
 if errorlevel 2 goto install_ollama_script
-if errorlevel 1 start https://ollama.com/download
-if errorlevel 0 goto main
+if errorlevel 1 (
+    start "" "https://ollama.com/download"
+    goto main
+)
+
+goto install_ollama
 
 :install_ollama_script
-clear
-title ä½¿ç”¨å®˜æ–¹è„šæœ¬è‡ªåŠ¨å®‰è£…Ollama
-echo æ­£åœ¨ä½¿ç”¨å®˜æ–¹è„šæœ¬è‡ªåŠ¨å®‰è£…Ollama...
-powershell irm https://ollama.com/install.ps1 | iex
-echo å·²ç»“æŸã€‚
+cls
+title Ê¹ÓÃ¹Ù·½½Å±¾×Ô¶¯°²×°Ollama
+echo ÕýÔÚÊ¹ÓÃ¹Ù·½½Å±¾×Ô¶¯°²×°Ollama...
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; irm https://ollama.com/install.ps1 | iex"
+if errorlevel 1 (
+    echo °²×°½Å±¾Ö´ÐÐÊ§°Ü£¬¿ÉÄÜÊÇ PowerShell/ÍøÂçÎÊÌâ»òÈ¨ÏÞ²»×ã¡£
+    pause
+    goto main
+)
+where ollama >nul 2>&1
+if errorlevel 1 (
+    echo °²×°ÒÑ½áÊø£¬µ«Î´¼ì²âµ½ ollama ÃüÁî£¬½¨ÒéÖØÆôÖÕ¶Ë»ò¼ì²é°²×°×´Ì¬¡£
+) else (
+    echo °²×°³É¹¦£¬µ±Ç° Ollama °æ±¾£º
+    ollama --version
+)
 pause
 goto main
-::å†™å®Œäº†ï¼ï¼è§£è„±äº†ï¼ï¼ï¼
